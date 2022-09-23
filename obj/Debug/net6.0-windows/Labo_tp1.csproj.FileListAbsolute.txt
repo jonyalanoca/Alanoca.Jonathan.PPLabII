@@ -1,0 +1,17 @@
+C:\Users\jonya\Desktop\Labo\Labo_tp1\bin\Debug\net6.0-windows\Labo_tp1.exe
+C:\Users\jonya\Desktop\Labo\Labo_tp1\bin\Debug\net6.0-windows\Labo_tp1.deps.json
+C:\Users\jonya\Desktop\Labo\Labo_tp1\bin\Debug\net6.0-windows\Labo_tp1.runtimeconfig.json
+C:\Users\jonya\Desktop\Labo\Labo_tp1\bin\Debug\net6.0-windows\Labo_tp1.dll
+C:\Users\jonya\Desktop\Labo\Labo_tp1\bin\Debug\net6.0-windows\Labo_tp1.pdb
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\Labo_tp1.csproj.AssemblyReference.cache
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\Labo_tp1.FrmLogin.resources
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\Labo_tp1.csproj.GenerateResource.cache
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\Labo_tp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\Labo_tp1.AssemblyInfoInputs.cache
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\Labo_tp1.AssemblyInfo.cs
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\Labo_tp1.csproj.CoreCompileInputs.cache
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\Labo_tp1.dll
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\refint\Labo_tp1.dll
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\Labo_tp1.pdb
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\Labo_tp1.genruntimeconfig.cache
+C:\Users\jonya\Desktop\Labo\Labo_tp1\obj\Debug\net6.0-windows\ref\Labo_tp1.dll
