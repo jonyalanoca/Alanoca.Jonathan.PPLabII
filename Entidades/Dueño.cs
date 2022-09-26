@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    internal class Dueño:Personal
+    public class Dueño:Usuario
     {
         public Dueño(string nombre, string apellido, int dni, string email, string password) : base(nombre, apellido, dni, email, password)
         {

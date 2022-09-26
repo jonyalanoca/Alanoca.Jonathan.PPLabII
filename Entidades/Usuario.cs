@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public abstract class Personal
+    public abstract class Usuario
     {
         #region Atributos
         protected string nombre;
@@ -36,7 +36,7 @@ namespace Entidades
         }
         #endregion
         #region Constructores
-        public Personal(string nombre, string apellido, int din, string email, string password)
+        public Usuario(string nombre, string apellido, int din, string email, string password)
         {
             this.nombre = nombre;
             this.apellido = apellido;

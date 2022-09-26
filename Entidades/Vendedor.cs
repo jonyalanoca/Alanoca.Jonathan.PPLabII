@@ -1,26 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Vendedor:Personal
+    public class Vendedor:Usuario
     {
         private int edad;
-        private float sueldo;
+        private static float precioDia;
         private static List<EDias> diasLaborales;
+        private float sueldoMensual;
         static Vendedor()
         {
             Vendedor.diasLaborales = new List<EDias>();
+            Vendedor.precioDia = 0;
         }
-        public Vendedor(string nombre, string apellido, int dni, string email, string password,int edad, float sueldo,List<EDias> dias):base(nombre, apellido, dni,email, password)
+        public float SueldoMensual
+        {
+            set { Vendedor.precioDia = value; }
+        }
+        public Vendedor(string nombre, string apellido, int dni, string email, string password,int edad, float precioDia,List<EDias> dias):base(nombre, apellido, dni,email, password)
         {
             this.edad = edad;
-            this.sueldo = sueldo;
+            this.sueldoMensual = (float)diasLaborales.Count * Vendedor.precioDia;
             diasLaborales = dias;
+        }
+        public float Mostrar()
+        {
+            return this.sueldoMensual;
         }
     }
 }

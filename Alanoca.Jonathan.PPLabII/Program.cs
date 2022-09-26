@@ -1,4 +1,4 @@
-namespace Labo_tp1
+cnamespace Labo_tp1
 {
     internal static class Program
     {

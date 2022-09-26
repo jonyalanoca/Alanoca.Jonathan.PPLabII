@@ -8,3 +8,8 @@
     Sabado,
     Domingo
 }
+public enum EPuesto
+{
+    Dueño,
+    Vendedor
+}
