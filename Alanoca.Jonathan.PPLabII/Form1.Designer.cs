@@ -32,11 +32,14 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.picBanerStore = new System.Windows.Forms.PictureBox();
             this.btnIngresar = new System.Windows.Forms.Button();
-            this.btnEmail = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.btnHCodearLogin = new System.Windows.Forms.Button();
+            this.btnHCodearDuenio = new System.Windows.Forms.Button();
             this.picPersonas = new System.Windows.Forms.PictureBox();
             this.lblLogin = new System.Windows.Forms.Label();
+            this.btnSeccVender = new System.Windows.Forms.Button();
+            this.btnSeccAdmin = new System.Windows.Forms.Button();
+            this.btnHCodearVendedor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBanerStore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPersonas)).BeginInit();
             this.SuspendLayout();
@@ -81,14 +84,15 @@
             this.btnIngresar.TabIndex = 2;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
-            // btnEmail
+            // txtEmail
             // 
-            this.btnEmail.Location = new System.Drawing.Point(341, 196);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.PlaceholderText = "Email";
-            this.btnEmail.Size = new System.Drawing.Size(216, 23);
-            this.btnEmail.TabIndex = 3;
+            this.txtEmail.Location = new System.Drawing.Point(341, 196);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PlaceholderText = "Email";
+            this.txtEmail.Size = new System.Drawing.Size(216, 23);
+            this.txtEmail.TabIndex = 3;
             // 
             // txtPass
             // 
@@ -99,21 +103,22 @@
             this.txtPass.Size = new System.Drawing.Size(216, 23);
             this.txtPass.TabIndex = 4;
             // 
-            // btnHCodearLogin
+            // btnHCodearDuenio
             // 
-            this.btnHCodearLogin.FlatAppearance.BorderSize = 0;
-            this.btnHCodearLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnHCodearLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnHCodearLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHCodearLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+            this.btnHCodearDuenio.FlatAppearance.BorderSize = 0;
+            this.btnHCodearDuenio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnHCodearDuenio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnHCodearDuenio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHCodearDuenio.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.btnHCodearLogin.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnHCodearLogin.Location = new System.Drawing.Point(341, 330);
-            this.btnHCodearLogin.Name = "btnHCodearLogin";
-            this.btnHCodearLogin.Size = new System.Drawing.Size(216, 25);
-            this.btnHCodearLogin.TabIndex = 5;
-            this.btnHCodearLogin.Text = "Olvidé mis datos";
-            this.btnHCodearLogin.UseVisualStyleBackColor = true;
+            this.btnHCodearDuenio.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnHCodearDuenio.Location = new System.Drawing.Point(341, 330);
+            this.btnHCodearDuenio.Name = "btnHCodearDuenio";
+            this.btnHCodearDuenio.Size = new System.Drawing.Size(216, 24);
+            this.btnHCodearDuenio.TabIndex = 5;
+            this.btnHCodearDuenio.Text = "Soy dueño olvidé mis datos";
+            this.btnHCodearDuenio.UseVisualStyleBackColor = true;
+            this.btnHCodearDuenio.Click += new System.EventHandler(this.btnHCodearDuenio_Click);
             // 
             // picPersonas
             // 
@@ -139,17 +144,68 @@
             this.lblLogin.TabIndex = 7;
             this.lblLogin.Text = "Login";
             // 
+            // btnSeccVender
+            // 
+            this.btnSeccVender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
+            this.btnSeccVender.FlatAppearance.BorderSize = 0;
+            this.btnSeccVender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeccVender.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSeccVender.ForeColor = System.Drawing.Color.White;
+            this.btnSeccVender.Location = new System.Drawing.Point(341, 284);
+            this.btnSeccVender.Name = "btnSeccVender";
+            this.btnSeccVender.Size = new System.Drawing.Size(108, 40);
+            this.btnSeccVender.TabIndex = 8;
+            this.btnSeccVender.Text = "Vender";
+            this.btnSeccVender.UseVisualStyleBackColor = false;
+            this.btnSeccVender.Visible = false;
+            // 
+            // btnSeccAdmin
+            // 
+            this.btnSeccAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
+            this.btnSeccAdmin.FlatAppearance.BorderSize = 0;
+            this.btnSeccAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeccAdmin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSeccAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnSeccAdmin.Location = new System.Drawing.Point(455, 284);
+            this.btnSeccAdmin.Name = "btnSeccAdmin";
+            this.btnSeccAdmin.Size = new System.Drawing.Size(102, 40);
+            this.btnSeccAdmin.TabIndex = 9;
+            this.btnSeccAdmin.Text = "Administrar";
+            this.btnSeccAdmin.UseVisualStyleBackColor = false;
+            this.btnSeccAdmin.Visible = false;
+            // 
+            // btnHCodearVendedor
+            // 
+            this.btnHCodearVendedor.BackColor = System.Drawing.Color.Transparent;
+            this.btnHCodearVendedor.FlatAppearance.BorderSize = 0;
+            this.btnHCodearVendedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnHCodearVendedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnHCodearVendedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHCodearVendedor.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.btnHCodearVendedor.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnHCodearVendedor.Location = new System.Drawing.Point(341, 349);
+            this.btnHCodearVendedor.Name = "btnHCodearVendedor";
+            this.btnHCodearVendedor.Size = new System.Drawing.Size(216, 24);
+            this.btnHCodearVendedor.TabIndex = 10;
+            this.btnHCodearVendedor.Text = "Soy vendedor olvidé mis datos";
+            this.btnHCodearVendedor.UseVisualStyleBackColor = false;
+            this.btnHCodearVendedor.Click += new System.EventHandler(this.btnHCodearVendedor_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(600, 400);
+            this.Controls.Add(this.btnHCodearVendedor);
+            this.Controls.Add(this.btnSeccAdmin);
+            this.Controls.Add(this.btnSeccVender);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.picPersonas);
-            this.Controls.Add(this.btnHCodearLogin);
+            this.Controls.Add(this.btnHCodearDuenio);
             this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.btnEmail);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.picBanerStore);
             this.Controls.Add(this.btnSalir);
@@ -171,10 +227,13 @@
         private Button btnSalir;
         private PictureBox picBanerStore;
         private Button btnIngresar;
-        private TextBox btnEmail;
+        private TextBox txtEmail;
         private TextBox txtPass;
-        private Button btnHCodearLogin;
+        private Button btnHCodearDuenio;
         private PictureBox picPersonas;
         private Label lblLogin;
+        private Button btnSeccVender;
+        private Button btnSeccAdmin;
+        private Button btnHCodearVendedor;
     }
 }

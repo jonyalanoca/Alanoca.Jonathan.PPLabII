@@ -10,6 +10,7 @@
 }
 public enum EPuesto
 {
+    Ninguno,
     Dueño,
     Vendedor
 }

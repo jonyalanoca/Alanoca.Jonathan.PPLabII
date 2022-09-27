@@ -1,4 +1,5 @@
-cnamespace Labo_tp1
+using Entidades;
+namespace Labo_tp1
 {
     internal static class Program
     {
