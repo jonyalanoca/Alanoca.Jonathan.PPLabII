@@ -14,3 +14,12 @@ public enum EPuesto
     Dueño,
     Vendedor
 }
+public enum ECategoria
+{
+    Computación,
+    Electrodomesticos,
+    Celulares,
+    AudioVideo,
+    Herramientas,
+    Otros
+}

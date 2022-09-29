@@ -62,10 +62,8 @@ namespace Labo_tp1
                         btnHCodearVendedor.Enabled = false;
                         break;
                 }
-
             }
         }
-
         private void btnHCodearDuenio_Click(object sender, EventArgs e)
         {
             txtEmail.Text = "camisimpson@gmail.com";

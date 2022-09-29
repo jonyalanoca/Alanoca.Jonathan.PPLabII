@@ -12,6 +12,7 @@ namespace Entidades
         private static List<Vendedor> vendedoresList;
         private static List<Dueño> dueñosList;
         private static Dictionary<string, string> loginsList;
+        private static List<Producto> productosList;
         private static float precioPorDia;
 
         static Negocio()
