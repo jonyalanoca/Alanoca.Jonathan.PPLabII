@@ -46,7 +46,12 @@ namespace Labo_tp1
                 switch (puesto)
                 {
                     case EPuesto.Ninguno:
-                        MessageBox.Show("Los datos ingresados son incorrectos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //MessageBox.Show("Los datos ingresados son incorrectos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        foreach(var i in Negocio.ProductosList)
+                        {
+                            MessageBox.Show(i.MostrarInfo());
+                        }
+                        
                         break;
                     case EPuesto.Vendedor:
                         MessageBox.Show("Bienvenido " + Negocio.Presentacion(txtEmail.Text) + "\nQue tenga un buen día.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);

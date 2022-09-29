@@ -23,3 +23,9 @@ public enum ECategoria
     Herramientas,
     Otros
 }
+public enum ETipoMemoria
+{
+    SSD,
+    HDD,
+    M2
+}

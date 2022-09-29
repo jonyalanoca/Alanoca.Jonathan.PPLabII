@@ -20,7 +20,9 @@ namespace Entidades
             Negocio.precioPorDia = 3000;
             Negocio.vendedoresList = new List<Vendedor>();
             Negocio.dueñosList = new List<Dueño>();
+            Negocio.productosList = new List<Producto>();
             Negocio.loginsList = new Dictionary<string, string>();
+
 
             List<EDias> dias = new List<EDias>() { EDias.Lunes, EDias.Martes,EDias.Miercoles,EDias.Jueves,EDias.Viernes};
             Negocio.vendedoresList.Add(new Vendedor("Jonathan", "Alanoca", 37377700, "jonyalanoca2@gmail.com", "contra123", 29, dias));
@@ -29,7 +31,14 @@ namespace Entidades
 
             Negocio.dueñosList.Add(new Dueño("Camila", "Simpson", 401231232, "camisimpson@gmail.com", "123pass"));
 
-            foreach(var i in vendedoresList)
+
+            Producto cafetera = new Producto("Cafetera","TopHouse", 50000, "Argentina", ECategoria.Otros);
+            Producto notebook = new Notebook("Lenovo", 200000, "China", ECategoria.Computación, "corei5", ETipoMemoria.SSD, 240, 4,100);
+
+            productosList.Add(cafetera);
+            productosList.Add(notebook);
+
+            foreach (var i in vendedoresList)
             {
                 Negocio.loginsList.Add(i.Email, i.Password);
             }
@@ -37,10 +46,6 @@ namespace Entidades
             {
                 Negocio.loginsList.Add(i.Email, i.Password);
             }
-        }
-        public static  Dictionary<string, string> LoginsList
-        {
-            get { return Negocio.loginsList;}
         }
         public static List<Vendedor> VendedoresList
         {
@@ -54,6 +59,10 @@ namespace Entidades
         {
             get { return Negocio.precioPorDia; }
             set { Negocio.precioPorDia = value; }
+        }
+        public static List<Producto> ProductosList
+        {
+            get { return Negocio.productosList; }
         }
         public static string Presentacion(string email)
         {
