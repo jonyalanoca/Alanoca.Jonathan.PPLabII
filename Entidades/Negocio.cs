@@ -12,7 +12,6 @@ namespace Entidades
         private static List<Usuario> usuariosList;
         private static List<Producto> productosList;
         private static float precioPorDia;
-
         static Negocio()
         {
             Negocio.precioPorDia = 3000;
