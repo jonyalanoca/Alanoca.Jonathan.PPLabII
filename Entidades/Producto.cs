@@ -15,15 +15,16 @@ namespace Entidades
         protected float precio;
         protected string origen;
         protected ECategoria categoria;
-        
-        public Producto(string marca, float precio,string origen, ECategoria categoria)
+        protected int stock;
+        public Producto(string marca, float precio,string origen, ECategoria categoria, int stock)
         {
-            this.marca= marca;
+            this.marca = marca;
             this.precio = precio;
             this.origen = origen;
             this.categoria = categoria;
+            this.stock = stock;
         }
-        public Producto(string nombre, string marca, float precio, string origen, ECategoria categoria):this(marca, precio, origen, categoria)
+        public Producto(string nombre, string marca, float precio, string origen, ECategoria categoria, int stock):this(marca, precio, origen, categoria, stock)
         {
             this.nombre = nombre;
         }
@@ -47,7 +48,11 @@ namespace Entidades
             get { return this.categoria; }
             set { this.categoria = value; }
         }
-#endregion
+        public int Stock
+        {
+            get { return this.stock; }
+        }
+        #endregion
         public virtual string MostrarInfo()
         {
             StringBuilder sb = new StringBuilder();
@@ -57,6 +62,7 @@ namespace Entidades
             sb.AppendLine($"Origen: {this.origen}");
             sb.AppendLine($"Precio: {this.precio}");
             sb.AppendLine($"Categoria: {this.categoria.ToString()}");
+            sb.AppendLine($"Stock disponible: {this.stock} unidades");
             return sb.ToString();
         }
     }

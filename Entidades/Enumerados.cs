@@ -19,7 +19,6 @@ public enum ECategoria
     Computación,
     Electrodomesticos,
     Celulares,
-    AudioVideo,
     Herramientas,
     Otros
 }

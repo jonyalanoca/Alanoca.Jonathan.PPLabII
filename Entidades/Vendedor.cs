@@ -24,13 +24,5 @@ namespace Entidades
         {
             return 0;
         }
-        public static bool operator ==(Vendedor v, string email)
-        {
-            return v.Email == email;
-        }
-        public static bool operator !=(Vendedor v, string email)
-        {
-            return !(v == email);
-        }
     }
 }

@@ -6,26 +6,21 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Notebook:Producto
+    public sealed class Notebook:Producto
     {
         private string microprocesador;
         private ETipoMemoria tipoMemoria;
         private int memoria;
         private int ram;
-        private int stock;
 
-        public Notebook(string marca, float precio, string origen, ECategoria categoria,string microprocesador,ETipoMemoria tipo, int memoria, int ram, int stock):base(marca,precio, origen, categoria)
+        public Notebook(string marca, float precio, string origen, ECategoria categoria, int stock,string microprocesador,ETipoMemoria tipo, int memoria, int ram):base(marca,precio, origen, categoria, stock)
         {
             this.microprocesador = microprocesador;
             this.tipoMemoria = tipo;
             this.memoria = memoria;
             this.ram = ram;
-            this.stock = stock;
         }
-        public int Stock
-        {
-            get { return this.stock; }
-        }
+
         public override string MostrarInfo()
         {
             StringBuilder sb = new StringBuilder();

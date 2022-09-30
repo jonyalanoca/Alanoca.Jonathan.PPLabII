@@ -49,15 +49,19 @@ namespace Labo_tp1
                         //MessageBox.Show("Los datos ingresados son incorrectos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         foreach(var i in Negocio.ProductosList)
                         {
-                            MessageBox.Show(i.MostrarInfo());
+                            if (i.GetType() == typeof(Celular))
+                            {
+                                MessageBox.Show(i.MostrarInfo());
+                            }
+                            
                         }
                         
                         break;
                     case EPuesto.Vendedor:
-                        MessageBox.Show("Bienvenido " + Negocio.Presentacion(txtEmail.Text) + "\nQue tenga un buen día.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Bienvenido " + Negocio.ObtenerNombreCompleto(txtEmail.Text) + "\nQue tenga un buen día.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case EPuesto.Dueño:
-                        MessageBox.Show("Bienvenido " + Negocio.Presentacion(txtEmail.Text) + "\nPorfavor seleccione a que sector desea ir.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Bienvenido " + Negocio.ObtenerNombreCompleto(txtEmail.Text) + "\nPorfavor seleccione a que sector desea ir.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         btnIngresar.Visible = false;
                         btnSeccAdmin.Visible = true;
                         btnSeccVender.Visible = true;

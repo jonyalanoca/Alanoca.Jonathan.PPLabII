@@ -4,21 +4,23 @@
     {
         public static EPuesto Validar(string email, string pass)
         {
-            foreach( var i in Negocio.VendedoresList)
+            EPuesto aux = EPuesto.Ninguno;
+            foreach( var i in Negocio.UsuariosList)
             {
                 if(i==email && i.Password == pass)
                 {
-                    return EPuesto.Vendedor;
+                    if (i.GetType() == typeof(Vendedor))
+                    {
+                        aux = EPuesto.Vendedor;
+                    }
+                    else
+                    {
+                        aux= EPuesto.Dueño;
+                    }
+                    break;
                 }
             }
-            foreach (var i in Negocio.DueñosList)
-            {
-                if (i == email && i.Password == pass)
-                {
-                    return EPuesto.Dueño;
-                }
-            }
-            return EPuesto.Ninguno;
+            return aux;
 
         }
     }

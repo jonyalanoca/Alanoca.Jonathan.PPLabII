@@ -45,6 +45,14 @@ namespace Entidades
             this.password = password;
         }
         #endregion
+        public static bool operator ==(Usuario v, string email)
+        {
+            return v.Email == email;
+        }
+        public static bool operator !=(Usuario v, string email)
+        {
+            return !(v == email);
+        }
 
 
     }
