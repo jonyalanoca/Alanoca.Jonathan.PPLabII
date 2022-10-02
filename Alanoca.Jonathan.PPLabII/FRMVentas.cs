@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,15 @@ namespace Labo_tp1
     {
         private Usuario usuario;
         private int tiempo = 0;
+        private List<Producto> listaCarrito;
+        private int numeroLista;
+        private double precioTotal;
         public FRMVentas(string  email)
         {
             InitializeComponent();
+            this.listaCarrito = new List<Producto>();
+            this.numeroLista = 1;
+            this.precioTotal = 0;
             foreach(var i in Negocio.UsuariosList)
             {
                 if (i == email)
@@ -26,7 +33,6 @@ namespace Labo_tp1
                 }
             }
         }
-
         private void FRMVentas_Load(object sender, EventArgs e)
         {
             dgvListaProductos.ForeColor = Color.Black;
@@ -34,7 +40,6 @@ namespace Labo_tp1
             {
                 dgvListaProductos.Rows.Add(i.Id,i.Marca,i.Origen,i.Categoria.ToString(),i.Precio,i.Stock);
             }
-
             lblVendedor_data.Text = usuario.Nombre + " " + usuario.Apellido;
             lblCumplir_data.Text = Negocio.HorasPorDia.ToString() + " hs.";
             tmrTiempoActivo.Enabled = true;
@@ -59,14 +64,28 @@ namespace Labo_tp1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            StringBuilder sb= new StringBuilder();        
             int i = dgvListaProductos.CurrentRow.Index;
-            foreach (var prod in Negocio.ProductosList)
+            if (ValidarStock((int)dgvListaProductos.Rows[i].Cells[5].Value, int.Parse(txtCantidad.Text)) &&  txtCantidad.Text!="0")
             {
-                if (prod == (int)dgvListaProductos.Rows[i].Cells[0].Value)
+                foreach (var prod in Negocio.ProductosList)
                 {
-                    MessageBox.Show(prod.MostrarInfo());
+                    if (prod == (int)dgvListaProductos.Rows[i].Cells[0].Value)
+                    {
+                        this.listaCarrito.Add(prod);
+                        sb.AppendLine($"{this.numeroLista}) {prod.Id}        Cant: {txtCantidad.Text}        Precio: ${prod.Precio}");
+                        ltbCarrito.Items.Add(sb.ToString());
+                        this.precioTotal += int.Parse(txtCantidad.Text) * prod.Precio;
+                        lblTotalCarrito_data.Text = "$" + this.precioTotal.ToString();
+                        this.numeroLista++;
+                        txtCantidad.Text = "0";
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Por favor verifique:\n-Si hay stock\n-Si ingresó la cantidad.", "Algo salio mal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }  
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -78,6 +97,67 @@ namespace Labo_tp1
         private void lblCajaDinero_data_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDetalleProducto_Click(object sender, EventArgs e)
+        {
+            int i = dgvListaProductos.CurrentRow.Index;
+            foreach (var prod in Negocio.ProductosList)
+            {
+                if (prod == (int)dgvListaProductos.Rows[i].Cells[0].Value)
+                {
+                    MessageBox.Show(prod.MostrarInfo(),"Detalle del producto", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+            }
+        }
+        private bool ValidarStock(int stock, int cantidad)
+        {
+            if (cantidad <= stock)
+            {
+                return true;
+            }
+            return false;
+        }
+        private void filtrar(ECategoria categoria)
+        {
+            dgvListaProductos.Rows.Clear();
+            foreach (var i in Negocio.ProductosList)
+            {
+                if (i.Categoria == categoria)
+                {
+                    dgvListaProductos.Rows.Add(i.Id, i.Marca, i.Origen, i.Categoria.ToString(), i.Precio, i.Stock);
+                }
+            }
+        }
+
+        private void btnFiltroComp_Click(object sender, EventArgs e)
+        {
+            filtrar(ECategoria.Computación);
+        }
+
+        private void btnFiltroElecto_Click(object sender, EventArgs e)
+        {
+            filtrar(ECategoria.Electrodomesticos);
+        }
+
+        private void btnFiltroCelular_Click(object sender, EventArgs e)
+        {
+            filtrar(ECategoria.Celulares);
+        }
+
+        private void btnFiltroHerra_Click(object sender, EventArgs e)
+        {
+            filtrar(ECategoria.Herramientas);
+        }
+
+        private void btnFiltroTodo_Click(object sender, EventArgs e)
+        {
+            dgvListaProductos.Rows.Clear();
+            foreach (var i in Negocio.ProductosList)
+            {
+                dgvListaProductos.Rows.Add(i.Id, i.Marca, i.Origen, i.Categoria.ToString(), i.Precio, i.Stock);
+
+            }
         }
     }
 }

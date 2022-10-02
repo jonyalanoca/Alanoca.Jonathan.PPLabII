@@ -190,9 +190,9 @@
             this.lblTotalCarrito_data.ForeColor = System.Drawing.Color.White;
             this.lblTotalCarrito_data.Location = new System.Drawing.Point(97, 215);
             this.lblTotalCarrito_data.Name = "lblTotalCarrito_data";
-            this.lblTotalCarrito_data.Size = new System.Drawing.Size(96, 21);
+            this.lblTotalCarrito_data.Size = new System.Drawing.Size(14, 21);
             this.lblTotalCarrito_data.TabIndex = 18;
-            this.lblTotalCarrito_data.Text = "Vendedor : ";
+            this.lblTotalCarrito_data.Text = ".";
             this.lblTotalCarrito_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTotalCarrito
@@ -210,9 +210,6 @@
             // 
             this.ltbCarrito.FormattingEnabled = true;
             this.ltbCarrito.ItemHeight = 15;
-            this.ltbCarrito.Items.AddRange(new object[] {
-            "1-qer",
-            "2-asda"});
             this.ltbCarrito.Location = new System.Drawing.Point(6, 31);
             this.ltbCarrito.Name = "ltbCarrito";
             this.ltbCarrito.Size = new System.Drawing.Size(241, 169);
@@ -438,6 +435,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(136, 29);
             this.txtCantidad.TabIndex = 20;
+            this.txtCantidad.Text = "0";
             // 
             // btnFiltroTodo
             // 
@@ -452,6 +450,7 @@
             this.btnFiltroTodo.TabIndex = 19;
             this.btnFiltroTodo.Text = "Todos los productos";
             this.btnFiltroTodo.UseVisualStyleBackColor = false;
+            this.btnFiltroTodo.Click += new System.EventHandler(this.btnFiltroTodo_Click);
             // 
             // btnFiltroHerra
             // 
@@ -466,6 +465,7 @@
             this.btnFiltroHerra.TabIndex = 18;
             this.btnFiltroHerra.Text = "Filtrar Herramientas";
             this.btnFiltroHerra.UseVisualStyleBackColor = false;
+            this.btnFiltroHerra.Click += new System.EventHandler(this.btnFiltroHerra_Click);
             // 
             // btnFiltroCelular
             // 
@@ -480,6 +480,7 @@
             this.btnFiltroCelular.TabIndex = 17;
             this.btnFiltroCelular.Text = "Filtrar Celulares";
             this.btnFiltroCelular.UseVisualStyleBackColor = false;
+            this.btnFiltroCelular.Click += new System.EventHandler(this.btnFiltroCelular_Click);
             // 
             // btnFiltroElecto
             // 
@@ -494,6 +495,7 @@
             this.btnFiltroElecto.TabIndex = 16;
             this.btnFiltroElecto.Text = "Filtrar Electro domesticos";
             this.btnFiltroElecto.UseVisualStyleBackColor = false;
+            this.btnFiltroElecto.Click += new System.EventHandler(this.btnFiltroElecto_Click);
             // 
             // btnFiltroComp
             // 
@@ -508,6 +510,7 @@
             this.btnFiltroComp.TabIndex = 15;
             this.btnFiltroComp.Text = "Filtrar Computacion";
             this.btnFiltroComp.UseVisualStyleBackColor = false;
+            this.btnFiltroComp.Click += new System.EventHandler(this.btnFiltroComp_Click);
             // 
             // btnDetalleProducto
             // 
@@ -522,6 +525,7 @@
             this.btnDetalleProducto.TabIndex = 14;
             this.btnDetalleProducto.Text = "Detalles del producto";
             this.btnDetalleProducto.UseVisualStyleBackColor = false;
+            this.btnDetalleProducto.Click += new System.EventHandler(this.btnDetalleProducto_Click);
             // 
             // btnAgregar
             // 
@@ -605,7 +609,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1213, 521);
+            this.ClientSize = new System.Drawing.Size(1215, 521);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpCaja);
             this.Controls.Add(this.grpCarrito);
