@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
@@ -10,25 +11,31 @@ namespace Entidades
 {
     public class Producto
     {
+        protected int id;
         private string nombre;
         protected string marca;
         protected float precio;
         protected string origen;
         protected ECategoria categoria;
         protected int stock;
-        public Producto(string marca, float precio,string origen, ECategoria categoria, int stock)
+        public Producto(int id, string marca, float precio,string origen, ECategoria categoria, int stock)
         {
+            this.id = id;
             this.marca = marca;
             this.precio = precio;
             this.origen = origen;
             this.categoria = categoria;
             this.stock = stock;
         }
-        public Producto(string nombre, string marca, float precio, string origen, ECategoria categoria, int stock):this(marca, precio, origen, categoria, stock)
+        public Producto(int id, string nombre, string marca, float precio, string origen, ECategoria categoria, int stock):this(id,marca, precio, origen, categoria, stock)
         {
             this.nombre = nombre;
         }
         #region setters y getters
+        public int Id
+        {
+            get { return this.id; }
+        }
         public string Marca
         {
             get { return this.marca; }
@@ -57,6 +64,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"iNFORMACION PRODUCTO GENERAL");
+            sb.AppendLine($"Id de producto: {this.id}");
             sb.AppendLine($"Producto: {this.nombre}");
             sb.AppendLine($"Marca: {this.marca}");
             sb.AppendLine($"Origen: {this.origen}");
@@ -64,6 +72,14 @@ namespace Entidades
             sb.AppendLine($"Categoria: {this.categoria.ToString()}");
             sb.AppendLine($"Stock disponible: {this.stock} unidades");
             return sb.ToString();
+        }
+        public  static bool operator ==(Producto p, int id)
+        {
+            return p.Id == id;
+        }
+        public static bool operator !=(Producto p, int id)
+        {
+            return !(p == id);
         }
     }
 }

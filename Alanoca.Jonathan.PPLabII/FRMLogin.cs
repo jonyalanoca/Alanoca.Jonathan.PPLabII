@@ -49,7 +49,7 @@ namespace Labo_tp1
                         //MessageBox.Show("Los datos ingresados son incorrectos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         foreach(var i in Negocio.ProductosList)
                         {
-                            if (i.GetType() == typeof(Celular))
+                            if (i.GetType() == typeof(Producto))
                             {
                                 MessageBox.Show(i.MostrarInfo());
                             }
@@ -83,6 +83,12 @@ namespace Labo_tp1
         {
             txtEmail.Text = "geraduviri@gmail.com";
             txtPass.Text = "123contra";
+        }
+
+        private void btnSeccVender_Click(object sender, EventArgs e)
+        {
+            FRMVentas formVentas = new FRMVentas(txtEmail.Text);
+            formVentas.ShowDialog();
         }
     }
 }

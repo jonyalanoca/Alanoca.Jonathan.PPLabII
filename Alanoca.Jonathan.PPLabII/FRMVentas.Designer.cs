@@ -28,14 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMVentas));
             this.grpCliente = new System.Windows.Forms.GroupBox();
+            this.lblNroCliente_data = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCredito = new System.Windows.Forms.Label();
+            this.lblEfectivo = new System.Windows.Forms.Label();
             this.lblNroCliente = new System.Windows.Forms.Label();
             this.grpCarrito = new System.Windows.Forms.GroupBox();
+            this.lblTotalCarrito_data = new System.Windows.Forms.Label();
+            this.lblTotalCarrito = new System.Windows.Forms.Label();
             this.ltbCarrito = new System.Windows.Forms.ListBox();
             this.btnVender = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.grpCaja = new System.Windows.Forms.GroupBox();
+            this.lblCajaDinero_data = new System.Windows.Forms.Label();
+            this.lblCumplir_data = new System.Windows.Forms.Label();
+            this.lblActivo_data = new System.Windows.Forms.Label();
+            this.lblVendedor_data = new System.Windows.Forms.Label();
             this.lblFinalizar = new System.Windows.Forms.Button();
             this.lblSiguiente = new System.Windows.Forms.Button();
             this.lblCaja = new System.Windows.Forms.Label();
@@ -44,6 +56,8 @@
             this.lblVendedor = new System.Windows.Forms.Label();
             this.picElectroStore = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnFiltroTodo = new System.Windows.Forms.Button();
             this.btnFiltroHerra = new System.Windows.Forms.Button();
             this.btnFiltroCelular = new System.Windows.Forms.Button();
@@ -52,14 +66,13 @@
             this.btnDetalleProducto = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvListaProductos = new System.Windows.Forms.DataGridView();
-            this.lblEfectivo = new System.Windows.Forms.Label();
-            this.lblCredito = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.lblVendedor_data = new System.Windows.Forms.Label();
-            this.lblActivo_data = new System.Windows.Forms.Label();
-            this.lblCumplir_data = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.IdProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Origen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tmrTiempoActivo = new System.Windows.Forms.Timer(this.components);
             this.grpCliente.SuspendLayout();
             this.grpCarrito.SuspendLayout();
             this.grpCaja.SuspendLayout();
@@ -70,21 +83,83 @@
             // 
             // grpCliente
             // 
+            this.grpCliente.Controls.Add(this.lblNroCliente_data);
+            this.grpCliente.Controls.Add(this.label2);
+            this.grpCliente.Controls.Add(this.label1);
             this.grpCliente.Controls.Add(this.lblCredito);
             this.grpCliente.Controls.Add(this.lblEfectivo);
             this.grpCliente.Controls.Add(this.lblNroCliente);
             this.grpCliente.ForeColor = System.Drawing.Color.White;
             this.grpCliente.Location = new System.Drawing.Point(953, 14);
             this.grpCliente.Name = "grpCliente";
-            this.grpCliente.Size = new System.Drawing.Size(253, 172);
+            this.grpCliente.Size = new System.Drawing.Size(253, 142);
             this.grpCliente.TabIndex = 1;
             this.grpCliente.TabStop = false;
             this.grpCliente.Text = "Credito Disponible";
+            // 
+            // lblNroCliente_data
+            // 
+            this.lblNroCliente_data.AutoSize = true;
+            this.lblNroCliente_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNroCliente_data.ForeColor = System.Drawing.Color.White;
+            this.lblNroCliente_data.Location = new System.Drawing.Point(104, 22);
+            this.lblNroCliente_data.Name = "lblNroCliente_data";
+            this.lblNroCliente_data.Size = new System.Drawing.Size(14, 21);
+            this.lblNroCliente_data.TabIndex = 21;
+            this.lblNroCliente_data.Text = ".";
+            this.lblNroCliente_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(78, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 21);
+            this.label2.TabIndex = 20;
+            this.label2.Text = ".";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(79, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 21);
+            this.label1.TabIndex = 19;
+            this.label1.Text = ". ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblCredito
+            // 
+            this.lblCredito.AutoSize = true;
+            this.lblCredito.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCredito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblCredito.Location = new System.Drawing.Point(57, 89);
+            this.lblCredito.Name = "lblCredito";
+            this.lblCredito.Size = new System.Drawing.Size(148, 21);
+            this.lblCredito.TabIndex = 15;
+            this.lblCredito.Text = "Credito Dispinible";
+            // 
+            // lblEfectivo
+            // 
+            this.lblEfectivo.AutoSize = true;
+            this.lblEfectivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblEfectivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblEfectivo.Location = new System.Drawing.Point(48, 43);
+            this.lblEfectivo.Name = "lblEfectivo";
+            this.lblEfectivo.Size = new System.Drawing.Size(157, 21);
+            this.lblEfectivo.TabIndex = 14;
+            this.lblEfectivo.Text = "Efectivo disponible";
             // 
             // lblNroCliente
             // 
             this.lblNroCliente.AutoSize = true;
             this.lblNroCliente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNroCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblNroCliente.Location = new System.Drawing.Point(6, 22);
             this.lblNroCliente.Name = "lblNroCliente";
             this.lblNroCliente.Size = new System.Drawing.Size(92, 21);
@@ -94,17 +169,42 @@
             // 
             // grpCarrito
             // 
+            this.grpCarrito.Controls.Add(this.lblTotalCarrito_data);
+            this.grpCarrito.Controls.Add(this.lblTotalCarrito);
             this.grpCarrito.Controls.Add(this.ltbCarrito);
             this.grpCarrito.Controls.Add(this.btnVender);
             this.grpCarrito.Controls.Add(this.btnCancelar);
             this.grpCarrito.ForeColor = System.Drawing.Color.White;
-            this.grpCarrito.Location = new System.Drawing.Point(953, 192);
+            this.grpCarrito.Location = new System.Drawing.Point(953, 162);
             this.grpCarrito.Name = "grpCarrito";
-            this.grpCarrito.Size = new System.Drawing.Size(253, 322);
+            this.grpCarrito.Size = new System.Drawing.Size(253, 352);
             this.grpCarrito.TabIndex = 2;
             this.grpCarrito.TabStop = false;
             this.grpCarrito.Text = "Carrito de compra";
             this.grpCarrito.Enter += new System.EventHandler(this.grpCliente_Enter);
+            // 
+            // lblTotalCarrito_data
+            // 
+            this.lblTotalCarrito_data.AutoSize = true;
+            this.lblTotalCarrito_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalCarrito_data.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCarrito_data.Location = new System.Drawing.Point(97, 215);
+            this.lblTotalCarrito_data.Name = "lblTotalCarrito_data";
+            this.lblTotalCarrito_data.Size = new System.Drawing.Size(96, 21);
+            this.lblTotalCarrito_data.TabIndex = 18;
+            this.lblTotalCarrito_data.Text = "Vendedor : ";
+            this.lblTotalCarrito_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTotalCarrito
+            // 
+            this.lblTotalCarrito.AutoSize = true;
+            this.lblTotalCarrito.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalCarrito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTotalCarrito.Location = new System.Drawing.Point(22, 215);
+            this.lblTotalCarrito.Name = "lblTotalCarrito";
+            this.lblTotalCarrito.Size = new System.Drawing.Size(56, 21);
+            this.lblTotalCarrito.TabIndex = 14;
+            this.lblTotalCarrito.Text = "Total :";
             // 
             // ltbCarrito
             // 
@@ -115,7 +215,7 @@
             "2-asda"});
             this.ltbCarrito.Location = new System.Drawing.Point(6, 31);
             this.ltbCarrito.Name = "ltbCarrito";
-            this.ltbCarrito.Size = new System.Drawing.Size(241, 184);
+            this.ltbCarrito.Size = new System.Drawing.Size(241, 169);
             this.ltbCarrito.TabIndex = 11;
             // 
             // btnVender
@@ -125,13 +225,12 @@
             this.btnVender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVender.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVender.ForeColor = System.Drawing.Color.White;
-            this.btnVender.Location = new System.Drawing.Point(22, 221);
+            this.btnVender.Location = new System.Drawing.Point(22, 251);
             this.btnVender.Name = "btnVender";
             this.btnVender.Size = new System.Drawing.Size(212, 40);
             this.btnVender.TabIndex = 9;
             this.btnVender.Text = "Vender";
             this.btnVender.UseVisualStyleBackColor = false;
-            this.btnVender.Visible = false;
             // 
             // btnCancelar
             // 
@@ -140,17 +239,16 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(22, 267);
+            this.btnCancelar.Location = new System.Drawing.Point(22, 297);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(212, 40);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar Venta";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Visible = false;
             // 
             // grpCaja
             // 
-            this.grpCaja.Controls.Add(this.label4);
+            this.grpCaja.Controls.Add(this.lblCajaDinero_data);
             this.grpCaja.Controls.Add(this.lblCumplir_data);
             this.grpCaja.Controls.Add(this.lblActivo_data);
             this.grpCaja.Controls.Add(this.lblVendedor_data);
@@ -169,6 +267,55 @@
             this.grpCaja.TabStop = false;
             this.grpCaja.Text = "Caja";
             // 
+            // lblCajaDinero_data
+            // 
+            this.lblCajaDinero_data.AutoSize = true;
+            this.lblCajaDinero_data.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCajaDinero_data.ForeColor = System.Drawing.Color.White;
+            this.lblCajaDinero_data.Location = new System.Drawing.Point(91, 318);
+            this.lblCajaDinero_data.Name = "lblCajaDinero_data";
+            this.lblCajaDinero_data.Size = new System.Drawing.Size(19, 30);
+            this.lblCajaDinero_data.TabIndex = 18;
+            this.lblCajaDinero_data.Text = ".";
+            this.lblCajaDinero_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblCajaDinero_data.Click += new System.EventHandler(this.lblCajaDinero_data_Click);
+            // 
+            // lblCumplir_data
+            // 
+            this.lblCumplir_data.AutoSize = true;
+            this.lblCumplir_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCumplir_data.ForeColor = System.Drawing.Color.White;
+            this.lblCumplir_data.Location = new System.Drawing.Point(122, 219);
+            this.lblCumplir_data.Name = "lblCumplir_data";
+            this.lblCumplir_data.Size = new System.Drawing.Size(18, 21);
+            this.lblCumplir_data.TabIndex = 17;
+            this.lblCumplir_data.Text = ". ";
+            this.lblCumplir_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblActivo_data
+            // 
+            this.lblActivo_data.AutoSize = true;
+            this.lblActivo_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblActivo_data.ForeColor = System.Drawing.Color.White;
+            this.lblActivo_data.Location = new System.Drawing.Point(122, 199);
+            this.lblActivo_data.Name = "lblActivo_data";
+            this.lblActivo_data.Size = new System.Drawing.Size(14, 21);
+            this.lblActivo_data.TabIndex = 16;
+            this.lblActivo_data.Text = ".";
+            this.lblActivo_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblVendedor_data
+            // 
+            this.lblVendedor_data.AutoSize = true;
+            this.lblVendedor_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblVendedor_data.ForeColor = System.Drawing.Color.White;
+            this.lblVendedor_data.Location = new System.Drawing.Point(122, 178);
+            this.lblVendedor_data.Name = "lblVendedor_data";
+            this.lblVendedor_data.Size = new System.Drawing.Size(14, 21);
+            this.lblVendedor_data.TabIndex = 14;
+            this.lblVendedor_data.Text = ".";
+            this.lblVendedor_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // lblFinalizar
             // 
             this.lblFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
@@ -182,7 +329,6 @@
             this.lblFinalizar.TabIndex = 12;
             this.lblFinalizar.Text = "Finalizar Jornada";
             this.lblFinalizar.UseVisualStyleBackColor = false;
-            this.lblFinalizar.Visible = false;
             // 
             // lblSiguiente
             // 
@@ -197,7 +343,6 @@
             this.lblSiguiente.TabIndex = 11;
             this.lblSiguiente.Text = "Atender al Siguiente";
             this.lblSiguiente.UseVisualStyleBackColor = false;
-            this.lblSiguiente.Visible = false;
             // 
             // lblCaja
             // 
@@ -275,6 +420,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de productos";
             // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCantidad.Location = new System.Drawing.Point(399, 428);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(79, 21);
+            this.lblCantidad.TabIndex = 13;
+            this.lblCantidad.Text = "Cantidad";
+            this.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCantidad.Location = new System.Drawing.Point(372, 456);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(136, 29);
+            this.txtCantidad.TabIndex = 20;
+            // 
             // btnFiltroTodo
             // 
             this.btnFiltroTodo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
@@ -288,7 +452,6 @@
             this.btnFiltroTodo.TabIndex = 19;
             this.btnFiltroTodo.Text = "Todos los productos";
             this.btnFiltroTodo.UseVisualStyleBackColor = false;
-            this.btnFiltroTodo.Visible = false;
             // 
             // btnFiltroHerra
             // 
@@ -303,7 +466,6 @@
             this.btnFiltroHerra.TabIndex = 18;
             this.btnFiltroHerra.Text = "Filtrar Herramientas";
             this.btnFiltroHerra.UseVisualStyleBackColor = false;
-            this.btnFiltroHerra.Visible = false;
             // 
             // btnFiltroCelular
             // 
@@ -318,7 +480,6 @@
             this.btnFiltroCelular.TabIndex = 17;
             this.btnFiltroCelular.Text = "Filtrar Celulares";
             this.btnFiltroCelular.UseVisualStyleBackColor = false;
-            this.btnFiltroCelular.Visible = false;
             // 
             // btnFiltroElecto
             // 
@@ -333,7 +494,6 @@
             this.btnFiltroElecto.TabIndex = 16;
             this.btnFiltroElecto.Text = "Filtrar Electro domesticos";
             this.btnFiltroElecto.UseVisualStyleBackColor = false;
-            this.btnFiltroElecto.Visible = false;
             // 
             // btnFiltroComp
             // 
@@ -348,7 +508,6 @@
             this.btnFiltroComp.TabIndex = 15;
             this.btnFiltroComp.Text = "Filtrar Computacion";
             this.btnFiltroComp.UseVisualStyleBackColor = false;
-            this.btnFiltroComp.Visible = false;
             // 
             // btnDetalleProducto
             // 
@@ -363,7 +522,6 @@
             this.btnDetalleProducto.TabIndex = 14;
             this.btnDetalleProducto.Text = "Detalles del producto";
             this.btnDetalleProducto.UseVisualStyleBackColor = false;
-            this.btnDetalleProducto.Visible = false;
             // 
             // btnAgregar
             // 
@@ -378,104 +536,69 @@
             this.btnAgregar.TabIndex = 13;
             this.btnAgregar.Text = "Agregar al carrito";
             this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Visible = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvListaProductos
             // 
+            this.dgvListaProductos.BackgroundColor = System.Drawing.Color.RosyBrown;
+            this.dgvListaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvListaProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
+            this.dgvListaProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProd,
+            this.Marca,
+            this.Origen,
+            this.Categoria,
+            this.Precio,
+            this.Stock});
+            this.dgvListaProductos.GridColor = System.Drawing.Color.Gray;
             this.dgvListaProductos.Location = new System.Drawing.Point(6, 89);
             this.dgvListaProductos.Name = "dgvListaProductos";
             this.dgvListaProductos.RowTemplate.Height = 25;
-            this.dgvListaProductos.Size = new System.Drawing.Size(627, 324);
+            this.dgvListaProductos.Size = new System.Drawing.Size(629, 315);
             this.dgvListaProductos.TabIndex = 1;
             this.dgvListaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // lblEfectivo
+            // IdProd
             // 
-            this.lblEfectivo.AutoSize = true;
-            this.lblEfectivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEfectivo.Location = new System.Drawing.Point(48, 62);
-            this.lblEfectivo.Name = "lblEfectivo";
-            this.lblEfectivo.Size = new System.Drawing.Size(157, 21);
-            this.lblEfectivo.TabIndex = 14;
-            this.lblEfectivo.Text = "Efectivo disponible";
+            this.IdProd.HeaderText = "ID Producto";
+            this.IdProd.Name = "IdProd";
+            this.IdProd.Width = 80;
             // 
-            // lblCredito
+            // Marca
             // 
-            this.lblCredito.AutoSize = true;
-            this.lblCredito.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCredito.Location = new System.Drawing.Point(57, 110);
-            this.lblCredito.Name = "lblCredito";
-            this.lblCredito.Size = new System.Drawing.Size(148, 21);
-            this.lblCredito.TabIndex = 15;
-            this.lblCredito.Text = "Credito Dispinible";
+            this.Marca.HeaderText = "Marca";
+            this.Marca.Name = "Marca";
+            this.Marca.Width = 120;
             // 
-            // txtCantidad
+            // Origen
             // 
-            this.txtCantidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtCantidad.Location = new System.Drawing.Point(372, 456);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(136, 29);
-            this.txtCantidad.TabIndex = 20;
+            this.Origen.HeaderText = "Origen";
+            this.Origen.Name = "Origen";
             // 
-            // lblCantidad
+            // Categoria
             // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCantidad.Location = new System.Drawing.Point(399, 428);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(79, 21);
-            this.lblCantidad.TabIndex = 13;
-            this.lblCantidad.Text = "Cantidad";
-            this.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Categoria.HeaderText = "Catogoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.Width = 127;
             // 
-            // lblVendedor_data
+            // Precio
             // 
-            this.lblVendedor_data.AutoSize = true;
-            this.lblVendedor_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblVendedor_data.ForeColor = System.Drawing.Color.White;
-            this.lblVendedor_data.Location = new System.Drawing.Point(122, 178);
-            this.lblVendedor_data.Name = "lblVendedor_data";
-            this.lblVendedor_data.Size = new System.Drawing.Size(96, 21);
-            this.lblVendedor_data.TabIndex = 14;
-            this.lblVendedor_data.Text = "Vendedor : ";
-            this.lblVendedor_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 80;
             // 
-            // lblActivo_data
+            // Stock
             // 
-            this.lblActivo_data.AutoSize = true;
-            this.lblActivo_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblActivo_data.ForeColor = System.Drawing.Color.White;
-            this.lblActivo_data.Location = new System.Drawing.Point(122, 199);
-            this.lblActivo_data.Name = "lblActivo_data";
-            this.lblActivo_data.Size = new System.Drawing.Size(96, 21);
-            this.lblActivo_data.TabIndex = 16;
-            this.lblActivo_data.Text = "Vendedor : ";
-            this.lblActivo_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.Width = 80;
             // 
-            // lblCumplir_data
+            // tmrTiempoActivo
             // 
-            this.lblCumplir_data.AutoSize = true;
-            this.lblCumplir_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCumplir_data.ForeColor = System.Drawing.Color.White;
-            this.lblCumplir_data.Location = new System.Drawing.Point(122, 219);
-            this.lblCumplir_data.Name = "lblCumplir_data";
-            this.lblCumplir_data.Size = new System.Drawing.Size(96, 21);
-            this.lblCumplir_data.TabIndex = 17;
-            this.lblCumplir_data.Text = "Vendedor : ";
-            this.lblCumplir_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(63, 314);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 30);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Vendedor : ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tmrTiempoActivo.Interval = 1000;
+            this.tmrTiempoActivo.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FRMVentas
             // 
@@ -494,6 +617,7 @@
             this.grpCliente.ResumeLayout(false);
             this.grpCliente.PerformLayout();
             this.grpCarrito.ResumeLayout(false);
+            this.grpCarrito.PerformLayout();
             this.grpCaja.ResumeLayout(false);
             this.grpCaja.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picElectroStore)).EndInit();
@@ -530,11 +654,23 @@
         private Button btnFiltroElecto;
         private Label lblCredito;
         private Label lblEfectivo;
-        private Label label4;
+        private Label lblCajaDinero_data;
         private Label lblCumplir_data;
         private Label lblActivo_data;
         private Label lblVendedor_data;
         private Label lblCantidad;
         private TextBox txtCantidad;
+        private Label lblNroCliente_data;
+        private Label label2;
+        private Label label1;
+        private Label lblTotalCarrito_data;
+        private Label lblTotalCarrito;
+        private DataGridViewTextBoxColumn IdProd;
+        private DataGridViewTextBoxColumn Marca;
+        private DataGridViewTextBoxColumn Origen;
+        private DataGridViewTextBoxColumn Categoria;
+        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn Stock;
+        private System.Windows.Forms.Timer tmrTiempoActivo;
     }
 }

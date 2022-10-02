@@ -158,6 +158,7 @@
             this.btnSeccVender.Text = "Vender";
             this.btnSeccVender.UseVisualStyleBackColor = false;
             this.btnSeccVender.Visible = false;
+            this.btnSeccVender.Click += new System.EventHandler(this.btnSeccVender_Click);
             // 
             // btnSeccAdmin
             // 

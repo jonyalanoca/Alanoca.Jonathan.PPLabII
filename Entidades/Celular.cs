@@ -13,7 +13,7 @@ namespace Entidades
         private float camara;
         private float pulgadas;
         private int memoria;
-        public Celular(string marca, float precio, string origen, ECategoria categoria, int stock,string modelo, string so, float camara, float pulgadas,int memoria) : base(marca, precio, origen, categoria, stock)
+        public Celular(int id, string marca, float precio, string origen, ECategoria categoria, int stock,string modelo, string so, float camara, float pulgadas,int memoria) : base(id, marca, precio, origen, categoria, stock)
         {
             this.modelo = modelo;
             this.so = so;

@@ -13,7 +13,7 @@ namespace Entidades
         private int memoria;
         private int ram;
 
-        public Notebook(string marca, float precio, string origen, ECategoria categoria, int stock,string microprocesador,ETipoMemoria tipo, int memoria, int ram):base(marca,precio, origen, categoria, stock)
+        public Notebook(int id, string marca, float precio, string origen, ECategoria categoria, int stock,string microprocesador,ETipoMemoria tipo, int memoria, int ram):base(id,marca,precio, origen, categoria, stock)
         {
             this.microprocesador = microprocesador;
             this.tipoMemoria = tipo;
