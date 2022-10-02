@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
@@ -67,10 +68,12 @@ namespace Entidades
         public static double DineroCaja
         {
             get { return Negocio.dineroCaja; }
+            set { Negocio.dineroCaja=value; }
         }
         public static int NumeroClientes
         {
             get { return Negocio.numeroClientes; }
+            set { Negocio.numeroClientes = value; }
         }
         public static string ObtenerNombreCompleto(string email)
         {

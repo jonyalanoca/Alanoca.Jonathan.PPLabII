@@ -31,13 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMVentas));
             this.grpCliente = new System.Windows.Forms.GroupBox();
+            this.grpModo = new System.Windows.Forms.GroupBox();
+            this.rdbCredito = new System.Windows.Forms.RadioButton();
+            this.rdbEfectivo = new System.Windows.Forms.RadioButton();
             this.lblNroCliente_data = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblCredito = new System.Windows.Forms.Label();
-            this.lblEfectivo = new System.Windows.Forms.Label();
+            this.lblDineroDisponible_data = new System.Windows.Forms.Label();
+            this.lblDineroDisponible = new System.Windows.Forms.Label();
             this.lblNroCliente = new System.Windows.Forms.Label();
             this.grpCarrito = new System.Windows.Forms.GroupBox();
+            this.btnBorrar = new System.Windows.Forms.Button();
             this.lblTotalCarrito_data = new System.Windows.Forms.Label();
             this.lblTotalCarrito = new System.Windows.Forms.Label();
             this.ltbCarrito = new System.Windows.Forms.ListBox();
@@ -74,6 +76,7 @@
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tmrTiempoActivo = new System.Windows.Forms.Timer(this.components);
             this.grpCliente.SuspendLayout();
+            this.grpModo.SuspendLayout();
             this.grpCarrito.SuspendLayout();
             this.grpCaja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picElectroStore)).BeginInit();
@@ -83,11 +86,10 @@
             // 
             // grpCliente
             // 
+            this.grpCliente.Controls.Add(this.grpModo);
             this.grpCliente.Controls.Add(this.lblNroCliente_data);
-            this.grpCliente.Controls.Add(this.label2);
-            this.grpCliente.Controls.Add(this.label1);
-            this.grpCliente.Controls.Add(this.lblCredito);
-            this.grpCliente.Controls.Add(this.lblEfectivo);
+            this.grpCliente.Controls.Add(this.lblDineroDisponible_data);
+            this.grpCliente.Controls.Add(this.lblDineroDisponible);
             this.grpCliente.Controls.Add(this.lblNroCliente);
             this.grpCliente.ForeColor = System.Drawing.Color.White;
             this.grpCliente.Location = new System.Drawing.Point(953, 14);
@@ -96,6 +98,40 @@
             this.grpCliente.TabIndex = 1;
             this.grpCliente.TabStop = false;
             this.grpCliente.Text = "Credito Disponible";
+            // 
+            // grpModo
+            // 
+            this.grpModo.Controls.Add(this.rdbCredito);
+            this.grpModo.Controls.Add(this.rdbEfectivo);
+            this.grpModo.ForeColor = System.Drawing.Color.White;
+            this.grpModo.Location = new System.Drawing.Point(15, 72);
+            this.grpModo.Name = "grpModo";
+            this.grpModo.Size = new System.Drawing.Size(225, 53);
+            this.grpModo.TabIndex = 23;
+            this.grpModo.TabStop = false;
+            this.grpModo.Text = "Modo de pago";
+            // 
+            // rdbCredito
+            // 
+            this.rdbCredito.AutoSize = true;
+            this.rdbCredito.Location = new System.Drawing.Point(126, 22);
+            this.rdbCredito.Name = "rdbCredito";
+            this.rdbCredito.Size = new System.Drawing.Size(64, 19);
+            this.rdbCredito.TabIndex = 1;
+            this.rdbCredito.TabStop = true;
+            this.rdbCredito.Text = "Crédito";
+            this.rdbCredito.UseVisualStyleBackColor = true;
+            // 
+            // rdbEfectivo
+            // 
+            this.rdbEfectivo.AutoSize = true;
+            this.rdbEfectivo.Location = new System.Drawing.Point(21, 22);
+            this.rdbEfectivo.Name = "rdbEfectivo";
+            this.rdbEfectivo.Size = new System.Drawing.Size(67, 19);
+            this.rdbEfectivo.TabIndex = 0;
+            this.rdbEfectivo.TabStop = true;
+            this.rdbEfectivo.Text = "Efectivo";
+            this.rdbEfectivo.UseVisualStyleBackColor = true;
             // 
             // lblNroCliente_data
             // 
@@ -109,51 +145,28 @@
             this.lblNroCliente_data.Text = ".";
             this.lblNroCliente_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label2
+            // lblDineroDisponible_data
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(78, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 21);
-            this.label2.TabIndex = 20;
-            this.label2.Text = ".";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDineroDisponible_data.AutoSize = true;
+            this.lblDineroDisponible_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDineroDisponible_data.ForeColor = System.Drawing.Color.White;
+            this.lblDineroDisponible_data.Location = new System.Drawing.Point(104, 43);
+            this.lblDineroDisponible_data.Name = "lblDineroDisponible_data";
+            this.lblDineroDisponible_data.Size = new System.Drawing.Size(14, 21);
+            this.lblDineroDisponible_data.TabIndex = 20;
+            this.lblDineroDisponible_data.Text = ".";
+            this.lblDineroDisponible_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // lblDineroDisponible
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(79, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 21);
-            this.label1.TabIndex = 19;
-            this.label1.Text = ". ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblCredito
-            // 
-            this.lblCredito.AutoSize = true;
-            this.lblCredito.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCredito.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblCredito.Location = new System.Drawing.Point(57, 89);
-            this.lblCredito.Name = "lblCredito";
-            this.lblCredito.Size = new System.Drawing.Size(148, 21);
-            this.lblCredito.TabIndex = 15;
-            this.lblCredito.Text = "Credito Dispinible";
-            // 
-            // lblEfectivo
-            // 
-            this.lblEfectivo.AutoSize = true;
-            this.lblEfectivo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEfectivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblEfectivo.Location = new System.Drawing.Point(48, 43);
-            this.lblEfectivo.Name = "lblEfectivo";
-            this.lblEfectivo.Size = new System.Drawing.Size(157, 21);
-            this.lblEfectivo.TabIndex = 14;
-            this.lblEfectivo.Text = "Efectivo disponible";
+            this.lblDineroDisponible.AutoSize = true;
+            this.lblDineroDisponible.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDineroDisponible.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblDineroDisponible.Location = new System.Drawing.Point(36, 43);
+            this.lblDineroDisponible.Name = "lblDineroDisponible";
+            this.lblDineroDisponible.Size = new System.Drawing.Size(62, 21);
+            this.lblDineroDisponible.TabIndex = 14;
+            this.lblDineroDisponible.Text = "Dinero";
             // 
             // lblNroCliente
             // 
@@ -169,6 +182,7 @@
             // 
             // grpCarrito
             // 
+            this.grpCarrito.Controls.Add(this.btnBorrar);
             this.grpCarrito.Controls.Add(this.lblTotalCarrito_data);
             this.grpCarrito.Controls.Add(this.lblTotalCarrito);
             this.grpCarrito.Controls.Add(this.ltbCarrito);
@@ -183,6 +197,21 @@
             this.grpCarrito.Text = "Carrito de compra";
             this.grpCarrito.Enter += new System.EventHandler(this.grpCliente_Enter);
             // 
+            // btnBorrar
+            // 
+            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
+            this.btnBorrar.FlatAppearance.BorderSize = 0;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnBorrar.ForeColor = System.Drawing.Color.White;
+            this.btnBorrar.Location = new System.Drawing.Point(22, 282);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(212, 27);
+            this.btnBorrar.TabIndex = 19;
+            this.btnBorrar.Text = "Borrar Carrito";
+            this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
             // lblTotalCarrito_data
             // 
             this.lblTotalCarrito_data.AutoSize = true;
@@ -190,9 +219,9 @@
             this.lblTotalCarrito_data.ForeColor = System.Drawing.Color.White;
             this.lblTotalCarrito_data.Location = new System.Drawing.Point(97, 215);
             this.lblTotalCarrito_data.Name = "lblTotalCarrito_data";
-            this.lblTotalCarrito_data.Size = new System.Drawing.Size(14, 21);
+            this.lblTotalCarrito_data.Size = new System.Drawing.Size(19, 21);
             this.lblTotalCarrito_data.TabIndex = 18;
-            this.lblTotalCarrito_data.Text = ".";
+            this.lblTotalCarrito_data.Text = "0";
             this.lblTotalCarrito_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTotalCarrito
@@ -224,10 +253,11 @@
             this.btnVender.ForeColor = System.Drawing.Color.White;
             this.btnVender.Location = new System.Drawing.Point(22, 251);
             this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(212, 40);
+            this.btnVender.Size = new System.Drawing.Size(212, 27);
             this.btnVender.TabIndex = 9;
             this.btnVender.Text = "Vender";
             this.btnVender.UseVisualStyleBackColor = false;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
             // btnCancelar
             // 
@@ -236,12 +266,13 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(22, 297);
+            this.btnCancelar.Location = new System.Drawing.Point(22, 313);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(212, 40);
+            this.btnCancelar.Size = new System.Drawing.Size(212, 29);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar Venta";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // grpCaja
             // 
@@ -326,6 +357,7 @@
             this.lblFinalizar.TabIndex = 12;
             this.lblFinalizar.Text = "Finalizar Jornada";
             this.lblFinalizar.UseVisualStyleBackColor = false;
+            this.lblFinalizar.Click += new System.EventHandler(this.lblFinalizar_Click);
             // 
             // lblSiguiente
             // 
@@ -340,6 +372,7 @@
             this.lblSiguiente.TabIndex = 11;
             this.lblSiguiente.Text = "Atender al Siguiente";
             this.lblSiguiente.UseVisualStyleBackColor = false;
+            this.lblSiguiente.Click += new System.EventHandler(this.lblSiguiente_Click);
             // 
             // lblCaja
             // 
@@ -544,6 +577,7 @@
             // 
             // dgvListaProductos
             // 
+            this.dgvListaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaProductos.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dgvListaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvListaProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenVertical;
@@ -568,13 +602,11 @@
             // 
             this.IdProd.HeaderText = "ID Producto";
             this.IdProd.Name = "IdProd";
-            this.IdProd.Width = 80;
             // 
             // Marca
             // 
             this.Marca.HeaderText = "Marca";
             this.Marca.Name = "Marca";
-            this.Marca.Width = 120;
             // 
             // Origen
             // 
@@ -585,19 +617,16 @@
             // 
             this.Categoria.HeaderText = "Catogoria";
             this.Categoria.Name = "Categoria";
-            this.Categoria.Width = 127;
             // 
             // Precio
             // 
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
-            this.Precio.Width = 80;
             // 
             // Stock
             // 
             this.Stock.HeaderText = "Stock";
             this.Stock.Name = "Stock";
-            this.Stock.Width = 80;
             // 
             // tmrTiempoActivo
             // 
@@ -609,17 +638,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1215, 521);
+            this.ClientSize = new System.Drawing.Size(1214, 521);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpCaja);
             this.Controls.Add(this.grpCarrito);
             this.Controls.Add(this.grpCliente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FRMVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ElectroStore Ventas";
             this.Load += new System.EventHandler(this.FRMVentas_Load);
             this.grpCliente.ResumeLayout(false);
             this.grpCliente.PerformLayout();
+            this.grpModo.ResumeLayout(false);
+            this.grpModo.PerformLayout();
             this.grpCarrito.ResumeLayout(false);
             this.grpCarrito.PerformLayout();
             this.grpCaja.ResumeLayout(false);
@@ -656,8 +689,7 @@
         private Button btnFiltroHerra;
         private Button btnFiltroCelular;
         private Button btnFiltroElecto;
-        private Label lblCredito;
-        private Label lblEfectivo;
+        private Label lblDineroDisponible;
         private Label lblCajaDinero_data;
         private Label lblCumplir_data;
         private Label lblActivo_data;
@@ -665,8 +697,7 @@
         private Label lblCantidad;
         private TextBox txtCantidad;
         private Label lblNroCliente_data;
-        private Label label2;
-        private Label label1;
+        private Label lblDineroDisponible_data;
         private Label lblTotalCarrito_data;
         private Label lblTotalCarrito;
         private DataGridViewTextBoxColumn IdProd;
@@ -676,5 +707,9 @@
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.Timer tmrTiempoActivo;
+        private GroupBox grpModo;
+        private RadioButton rdbCredito;
+        private RadioButton rdbEfectivo;
+        private Button btnBorrar;
     }
 }
