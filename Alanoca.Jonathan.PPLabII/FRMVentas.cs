@@ -46,10 +46,6 @@ namespace Labo_tp1
         private void FRMVentas_Load(object sender, EventArgs e)
         {
             dgvListaProductos.ForeColor = Color.Black;
-            foreach(var i  in Negocio.ProductosList)
-            {
-                dgvListaProductos.Rows.Add(i.Id,i.Marca,i.Origen,i.Categoria.ToString(),i.Precio,i.Stock);
-            }
             lblVendedor_data.Text = usuario.Nombre + " " + usuario.Apellido;
             lblCumplir_data.Text = Negocio.HorasPorDia.ToString() + " hs.";
             tmrTiempoActivo.Enabled = true;
@@ -137,7 +133,7 @@ namespace Labo_tp1
             }
             return false;
         }
-        private void filtrar(ECategoria categoria)
+        private void Filtrar(ECategoria categoria)
         {
             dgvListaProductos.Rows.Clear();
             foreach (var i in Negocio.ProductosList)
@@ -148,6 +144,14 @@ namespace Labo_tp1
                 }
             }
         }
+        private void SinFiltro()
+        {
+            foreach (var i in Negocio.ProductosList)
+            {
+                dgvListaProductos.Rows.Add(i.Id, i.Marca, i.Origen, i.Categoria.ToString(), i.Precio, i.Stock);
+            }
+        }
+
         private void ResetearDatos()
         {
             this.listaCarrito.Clear();
@@ -155,6 +159,13 @@ namespace Labo_tp1
             lblTotalCarrito_data.Text = "0";
             ltbCarrito.Items.Clear();
             this.numeroLista = 1;
+        }
+        private void ActualizarProductos()
+        {
+            foreach(var i in this.listaCarrito)
+            {
+                i.Key.Stock -= i.Value;
+            }
         }
         private bool ExisteProducto(Producto prod)
         {
@@ -170,32 +181,28 @@ namespace Labo_tp1
 
         private void btnFiltroComp_Click(object sender, EventArgs e)
         {
-            filtrar(ECategoria.Computación);
+            Filtrar(ECategoria.Computación);
         }
 
         private void btnFiltroElecto_Click(object sender, EventArgs e)
         {
-            filtrar(ECategoria.Electrodomesticos);
+            Filtrar(ECategoria.Electrodomesticos);
         }
 
         private void btnFiltroCelular_Click(object sender, EventArgs e)
         {
-            filtrar(ECategoria.Celulares);
+            Filtrar(ECategoria.Celulares);
         }
 
         private void btnFiltroHerra_Click(object sender, EventArgs e)
         {
-            filtrar(ECategoria.Herramientas);
+            Filtrar(ECategoria.Herramientas);
         }
 
         private void btnFiltroTodo_Click(object sender, EventArgs e)
         {
             dgvListaProductos.Rows.Clear();
-            foreach (var i in Negocio.ProductosList)
-            {
-                dgvListaProductos.Rows.Add(i.Id, i.Marca, i.Origen, i.Categoria.ToString(), i.Precio, i.Stock);
-
-            }
+            SinFiltro();
         }
 
         private void lblSiguiente_Click(object sender, EventArgs e)
@@ -213,7 +220,9 @@ namespace Labo_tp1
             {
                 MessageBox.Show("Ya está atendiendo un cliente.\nTermine la venta o cancele la venta.", "Antención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            
+            dgvListaProductos.Rows.Clear();
+            SinFiltro();
+
         }
 
         private void btnVender_Click(object sender, EventArgs e)
@@ -239,8 +248,10 @@ namespace Labo_tp1
                         FRMFactura factura = new FRMFactura(this.listaCarrito, this.usuario);
                         factura.ShowDialog();
                     }
+                    ActualizarProductos();
                     ResetearDatos();
                     Size = new Size(320, 560);
+                    this.clienteActivo = false;
                 }
                 else
                 {
@@ -273,6 +284,11 @@ namespace Labo_tp1
         private void lblFinalizar_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

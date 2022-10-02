@@ -58,6 +58,7 @@ namespace Entidades
         public int Stock
         {
             get { return this.stock; }
+            set { this.stock = value; }
         }
         #endregion
         public virtual string MostrarInfo()
