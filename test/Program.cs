@@ -5,8 +5,11 @@ namespace test
     {
         static void Main(string[] args)
         {
-            string nombre = "jonathan";
-            Console.WriteLine(nombre.Contains("than"));
+            foreach (var i in Enum.GetValues(typeof(ECategoria))){
+                Console.WriteLine(i);
+                ECategoria cat1 = (ECategoria)i;
+            }
+
 
         }
     }

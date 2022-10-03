@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFiltroElecto = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMAdministracion));
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.grpModo = new System.Windows.Forms.GroupBox();
             this.rdbElectro = new System.Windows.Forms.RadioButton();
             this.rdbHerramientas = new System.Windows.Forms.RadioButton();
             this.rdbCelular = new System.Windows.Forms.RadioButton();
             this.rdbComputacion = new System.Windows.Forms.RadioButton();
             this.rdbTodo = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpBuscar = new System.Windows.Forms.GroupBox();
             this.lblCaja = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtPalabraBuscar = new System.Windows.Forms.TextBox();
             this.rdbOrigen = new System.Windows.Forms.RadioButton();
             this.rdbMarca = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.grpDetalle = new System.Windows.Forms.GroupBox();
+            this.btnDetalles = new System.Windows.Forms.Button();
             this.lblDetalle_data = new System.Windows.Forms.Label();
             this.dgvListaProductos = new System.Windows.Forms.DataGridView();
             this.IdProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,53 +63,55 @@
             this.rdbMenorPrecio = new System.Windows.Forms.RadioButton();
             this.rdbMayorPrecio = new System.Windows.Forms.RadioButton();
             this.grpModo.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grpBuscar.SuspendLayout();
+            this.grpDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).BeginInit();
             this.grpFiltroPrecio.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnFiltroElecto
+            // btnEditar
             // 
-            this.btnFiltroElecto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
-            this.btnFiltroElecto.FlatAppearance.BorderSize = 0;
-            this.btnFiltroElecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFiltroElecto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnFiltroElecto.ForeColor = System.Drawing.Color.White;
-            this.btnFiltroElecto.Location = new System.Drawing.Point(678, 417);
-            this.btnFiltroElecto.Name = "btnFiltroElecto";
-            this.btnFiltroElecto.Size = new System.Drawing.Size(230, 34);
-            this.btnFiltroElecto.TabIndex = 17;
-            this.btnFiltroElecto.Text = "Editar ";
-            this.btnFiltroElecto.UseVisualStyleBackColor = false;
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(678, 417);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(230, 34);
+            this.btnEditar.TabIndex = 17;
+            this.btnEditar.Text = "Editar ";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // button1
+            // btnEliminar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(678, 368);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(230, 34);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(678, 368);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(230, 34);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // button2
+            // btnAgregar
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(678, 467);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(230, 34);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.Location = new System.Drawing.Point(678, 467);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(230, 34);
+            this.btnAgregar.TabIndex = 19;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // grpModo
             // 
@@ -183,20 +186,20 @@
             this.rdbTodo.UseVisualStyleBackColor = true;
             this.rdbTodo.CheckedChanged += new System.EventHandler(this.rdbTodo_CheckedChanged);
             // 
-            // groupBox1
+            // grpBuscar
             // 
-            this.groupBox1.Controls.Add(this.lblCaja);
-            this.groupBox1.Controls.Add(this.btnBuscar);
-            this.groupBox1.Controls.Add(this.txtPalabraBuscar);
-            this.groupBox1.Controls.Add(this.rdbOrigen);
-            this.groupBox1.Controls.Add(this.rdbMarca);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(379, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(293, 158);
-            this.groupBox1.TabIndex = 25;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Buscar";
+            this.grpBuscar.Controls.Add(this.lblCaja);
+            this.grpBuscar.Controls.Add(this.btnBuscar);
+            this.grpBuscar.Controls.Add(this.txtPalabraBuscar);
+            this.grpBuscar.Controls.Add(this.rdbOrigen);
+            this.grpBuscar.Controls.Add(this.rdbMarca);
+            this.grpBuscar.ForeColor = System.Drawing.Color.White;
+            this.grpBuscar.Location = new System.Drawing.Point(379, 12);
+            this.grpBuscar.Name = "grpBuscar";
+            this.grpBuscar.Size = new System.Drawing.Size(293, 158);
+            this.grpBuscar.TabIndex = 25;
+            this.grpBuscar.TabStop = false;
+            this.grpBuscar.Text = "Buscar";
             // 
             // lblCaja
             // 
@@ -216,7 +219,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(60, 117);
+            this.btnBuscar.Location = new System.Drawing.Point(60, 124);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(159, 28);
             this.btnBuscar.TabIndex = 26;
@@ -253,32 +256,32 @@
             this.rdbMarca.Text = "Marca";
             this.rdbMarca.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // grpDetalle
             // 
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.lblDetalle_data);
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(677, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(230, 323);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Detalle del producto";
+            this.grpDetalle.Controls.Add(this.btnDetalles);
+            this.grpDetalle.Controls.Add(this.lblDetalle_data);
+            this.grpDetalle.ForeColor = System.Drawing.Color.White;
+            this.grpDetalle.Location = new System.Drawing.Point(677, 12);
+            this.grpDetalle.Name = "grpDetalle";
+            this.grpDetalle.Size = new System.Drawing.Size(230, 323);
+            this.grpDetalle.TabIndex = 26;
+            this.grpDetalle.TabStop = false;
+            this.grpDetalle.Text = "Detalle del producto";
             // 
-            // button3
+            // btnDetalles
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(27, 268);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(182, 49);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Ver detalle del producto";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.btnDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
+            this.btnDetalles.FlatAppearance.BorderSize = 0;
+            this.btnDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalles.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDetalles.ForeColor = System.Drawing.Color.White;
+            this.btnDetalles.Location = new System.Drawing.Point(27, 268);
+            this.btnDetalles.Name = "btnDetalles";
+            this.btnDetalles.Size = new System.Drawing.Size(182, 49);
+            this.btnDetalles.TabIndex = 28;
+            this.btnDetalles.Text = "Ver detalle del producto";
+            this.btnDetalles.UseVisualStyleBackColor = false;
+            this.btnDetalles.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // lblDetalle_data
             // 
@@ -442,22 +445,24 @@
             this.ClientSize = new System.Drawing.Size(919, 513);
             this.Controls.Add(this.grpFiltroPrecio);
             this.Controls.Add(this.dgvListaProductos);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpDetalle);
+            this.Controls.Add(this.grpBuscar);
             this.Controls.Add(this.grpModo);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnFiltroElecto);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FRMAdministracion";
-            this.Text = "FRMAdministracion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ElectroStore Administración";
             this.Load += new System.EventHandler(this.FRMAdministracion_Load);
             this.grpModo.ResumeLayout(false);
             this.grpModo.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grpBuscar.ResumeLayout(false);
+            this.grpBuscar.PerformLayout();
+            this.grpDetalle.ResumeLayout(false);
+            this.grpDetalle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProductos)).EndInit();
             this.grpFiltroPrecio.ResumeLayout(false);
             this.grpFiltroPrecio.PerformLayout();
@@ -466,22 +471,22 @@
         }
 
         #endregion
-        private Button btnFiltroElecto;
-        private Button button1;
-        private Button button2;
+        private Button btnEditar;
+        private Button btnEliminar;
+        private Button btnAgregar;
         private GroupBox grpModo;
         private RadioButton rdbElectro;
         private RadioButton rdbHerramientas;
         private RadioButton rdbCelular;
         private RadioButton rdbComputacion;
         private RadioButton rdbTodo;
-        private GroupBox groupBox1;
+        private GroupBox grpBuscar;
         private Button btnBuscar;
         private TextBox txtPalabraBuscar;
         private RadioButton rdbOrigen;
         private RadioButton rdbMarca;
         private Label lblCaja;
-        private GroupBox groupBox2;
+        private GroupBox grpDetalle;
         private Label lblDetalle_data;
         private DataGridView dgvListaProductos;
         private DataGridViewTextBoxColumn IdProd;
@@ -490,7 +495,7 @@
         private DataGridViewTextBoxColumn Categoria;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Stock;
-        private Button button3;
+        private Button btnDetalles;
         private GroupBox grpFiltroPrecio;
         private Button btnFiltrarPrecio;
         private Label lblA;

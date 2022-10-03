@@ -204,5 +204,42 @@ namespace Labo_tp1
 
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int i = dgvListaProductos.CurrentRow.Index;
+            foreach(var prod in Negocio.ProductosList)
+            {
+                if (prod.Id == (int)dgvListaProductos.Rows[i].Cells[0].Value)
+                {
+                    if(MessageBox.Show("¿Seguro que desea eliminar el producto?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        Negocio.ProductosList.Remove(prod);
+                        dgvListaProductos.Rows.Clear();
+                        Filtrar();
+                        CargarDatagrid();
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int i = dgvListaProductos.CurrentRow.Index;
+            foreach (var prod in Negocio.ProductosList)
+            {
+                if (prod.Id == (int)dgvListaProductos.Rows[i].Cells[0].Value)
+                {
+                    FRMEditar frmEditar = new FRMEditar(prod);
+                    frmEditar.ShowDialog();
+                    break;
+                }
+            }
+            dgvListaProductos.Rows.Clear();
+            Filtrar();
+            CargarDatagrid();
+
+        }
     }
 }
