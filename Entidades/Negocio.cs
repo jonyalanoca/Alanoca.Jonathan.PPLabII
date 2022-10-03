@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -47,6 +48,10 @@ namespace Entidades
             Negocio.productosList.Add(new Celular(Negocio.idProducto++, "Samsung", 47000, "China", ECategoria.Celulares, 3, "GalaxyA3", "Andriod12", 48, (float)6.5, 128));
             Negocio.productosList.Add(new Celular(Negocio.idProducto++, "Motorola", 60000, "China", ECategoria.Celulares, 9, "MotoG5", "Andriod12", 50, (float)6.6, 128));
             Negocio.productosList.Add(new Celular(Negocio.idProducto++, "Morotola", 150000, "China", ECategoria.Celulares, 2, "Edge20Pro", "Andriod13", 108, (float)6.7, 256));
+        }
+        public static int IdProducto
+        {
+            get { return Negocio.idProducto; }
         }
         public static List<Usuario> UsuariosList
         {

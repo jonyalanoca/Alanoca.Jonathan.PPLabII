@@ -112,6 +112,7 @@
             this.btnAgregar.TabIndex = 19;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // grpModo
             // 
@@ -135,7 +136,7 @@
             this.rdbElectro.Name = "rdbElectro";
             this.rdbElectro.Size = new System.Drawing.Size(122, 19);
             this.rdbElectro.TabIndex = 4;
-            this.rdbElectro.Text = "Electrodomesticos";
+            this.rdbElectro.Text = "Electrodomésticos";
             this.rdbElectro.UseVisualStyleBackColor = true;
             this.rdbElectro.CheckedChanged += new System.EventHandler(this.rdbElectro_CheckedChanged);
             // 
@@ -296,6 +297,7 @@
             // 
             // dgvListaProductos
             // 
+            this.dgvListaProductos.AllowUserToAddRows = false;
             this.dgvListaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaProductos.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dgvListaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -334,7 +336,7 @@
             // 
             // Categoria
             // 
-            this.Categoria.HeaderText = "Catogoria";
+            this.Categoria.HeaderText = "Categoría";
             this.Categoria.Name = "Categoria";
             // 
             // Precio
@@ -489,12 +491,6 @@
         private GroupBox grpDetalle;
         private Label lblDetalle_data;
         private DataGridView dgvListaProductos;
-        private DataGridViewTextBoxColumn IdProd;
-        private DataGridViewTextBoxColumn Marca;
-        private DataGridViewTextBoxColumn Origen;
-        private DataGridViewTextBoxColumn Categoria;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn Stock;
         private Button btnDetalles;
         private GroupBox grpFiltroPrecio;
         private Button btnFiltrarPrecio;
@@ -504,5 +500,11 @@
         private Label lblEentre;
         private RadioButton rdbMenorPrecio;
         private RadioButton rdbMayorPrecio;
+        private DataGridViewTextBoxColumn IdProd;
+        private DataGridViewTextBoxColumn Marca;
+        private DataGridViewTextBoxColumn Origen;
+        private DataGridViewTextBoxColumn Categoria;
+        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn Stock;
     }
 }

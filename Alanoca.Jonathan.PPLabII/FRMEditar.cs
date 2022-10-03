@@ -30,8 +30,17 @@ namespace Labo_tp1
             foreach(var i in Enum.GetValues(typeof(ECategoria)))
             {
                 cmbCategoria.Items.Add(i.ToString());
-                cmbCategoria.SelectedIndex = 0;
             }
+            foreach(var i in cmbCategoria.Items)
+            {
+                if (i.ToString() == prod.Categoria.ToString())
+                {
+                    cmbCategoria.SelectedItem = i;
+                }
+            }
+            nupPrecio.Value = (int)this.prod.Precio;
+            tkbStock.Value = this.prod.Stock;
+            lblStock_data.Text = this.prod.Stock.ToString();
             
         }
 

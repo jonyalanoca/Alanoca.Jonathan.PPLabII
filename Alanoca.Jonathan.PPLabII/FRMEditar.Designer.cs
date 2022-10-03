@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMEditar));
-            this.grpFiltroPrecio = new System.Windows.Forms.GroupBox();
+            this.grpEditar = new System.Windows.Forms.GroupBox();
             this.lblStock_data = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.nupPrecio = new System.Windows.Forms.NumericUpDown();
@@ -38,28 +38,28 @@
             this.btnFiltrarPrecio = new System.Windows.Forms.Button();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
-            this.grpFiltroPrecio.SuspendLayout();
+            this.grpEditar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tkbStock)).BeginInit();
             this.SuspendLayout();
             // 
-            // grpFiltroPrecio
+            // grpEditar
             // 
-            this.grpFiltroPrecio.Controls.Add(this.lblStock_data);
-            this.grpFiltroPrecio.Controls.Add(this.lblStock);
-            this.grpFiltroPrecio.Controls.Add(this.nupPrecio);
-            this.grpFiltroPrecio.Controls.Add(this.tkbStock);
-            this.grpFiltroPrecio.Controls.Add(this.cmbCategoria);
-            this.grpFiltroPrecio.Controls.Add(this.btnFiltrarPrecio);
-            this.grpFiltroPrecio.Controls.Add(this.lblPrecio);
-            this.grpFiltroPrecio.Controls.Add(this.lblCategoria);
-            this.grpFiltroPrecio.ForeColor = System.Drawing.Color.White;
-            this.grpFiltroPrecio.Location = new System.Drawing.Point(12, 12);
-            this.grpFiltroPrecio.Name = "grpFiltroPrecio";
-            this.grpFiltroPrecio.Size = new System.Drawing.Size(426, 174);
-            this.grpFiltroPrecio.TabIndex = 26;
-            this.grpFiltroPrecio.TabStop = false;
-            this.grpFiltroPrecio.Text = "Filtrar Precio";
+            this.grpEditar.Controls.Add(this.lblStock_data);
+            this.grpEditar.Controls.Add(this.lblStock);
+            this.grpEditar.Controls.Add(this.nupPrecio);
+            this.grpEditar.Controls.Add(this.tkbStock);
+            this.grpEditar.Controls.Add(this.cmbCategoria);
+            this.grpEditar.Controls.Add(this.btnFiltrarPrecio);
+            this.grpEditar.Controls.Add(this.lblPrecio);
+            this.grpEditar.Controls.Add(this.lblCategoria);
+            this.grpEditar.ForeColor = System.Drawing.Color.White;
+            this.grpEditar.Location = new System.Drawing.Point(12, 12);
+            this.grpEditar.Name = "grpEditar";
+            this.grpEditar.Size = new System.Drawing.Size(426, 174);
+            this.grpEditar.TabIndex = 26;
+            this.grpEditar.TabStop = false;
+            this.grpEditar.Text = "Editar producto";
             // 
             // lblStock_data
             // 
@@ -163,15 +163,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(448, 192);
-            this.Controls.Add(this.grpFiltroPrecio);
+            this.Controls.Add(this.grpEditar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FRMEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FRMEditar";
+            this.Text = "ElectroStore Editar";
             this.Load += new System.EventHandler(this.FRMEditar_Load);
-            this.grpFiltroPrecio.ResumeLayout(false);
-            this.grpFiltroPrecio.PerformLayout();
+            this.grpEditar.ResumeLayout(false);
+            this.grpEditar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tkbStock)).EndInit();
             this.ResumeLayout(false);
@@ -180,7 +180,7 @@
 
         #endregion
 
-        private GroupBox grpFiltroPrecio;
+        private GroupBox grpEditar;
         private Button btnFiltrarPrecio;
         private Label lblPrecio;
         private Label lblCategoria;

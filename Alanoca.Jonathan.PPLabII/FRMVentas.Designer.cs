@@ -527,7 +527,7 @@
             this.btnFiltroElecto.Name = "btnFiltroElecto";
             this.btnFiltroElecto.Size = new System.Drawing.Size(121, 61);
             this.btnFiltroElecto.TabIndex = 16;
-            this.btnFiltroElecto.Text = "Filtrar Electro domesticos";
+            this.btnFiltroElecto.Text = "Filtrar Electro domésticos";
             this.btnFiltroElecto.UseVisualStyleBackColor = false;
             this.btnFiltroElecto.Click += new System.EventHandler(this.btnFiltroElecto_Click);
             // 
@@ -542,7 +542,7 @@
             this.btnFiltroComp.Name = "btnFiltroComp";
             this.btnFiltroComp.Size = new System.Drawing.Size(121, 61);
             this.btnFiltroComp.TabIndex = 15;
-            this.btnFiltroComp.Text = "Filtrar Computacion";
+            this.btnFiltroComp.Text = "Filtrar Computación";
             this.btnFiltroComp.UseVisualStyleBackColor = false;
             this.btnFiltroComp.Click += new System.EventHandler(this.btnFiltroComp_Click);
             // 
@@ -578,6 +578,7 @@
             // 
             // dgvListaProductos
             // 
+            this.dgvListaProductos.AllowUserToAddRows = false;
             this.dgvListaProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListaProductos.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dgvListaProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -616,7 +617,7 @@
             // 
             // Categoria
             // 
-            this.Categoria.HeaderText = "Catogoria";
+            this.Categoria.HeaderText = "Categoría";
             this.Categoria.Name = "Categoria";
             // 
             // Precio
@@ -701,16 +702,16 @@
         private Label lblDineroDisponible_data;
         private Label lblTotalCarrito_data;
         private Label lblTotalCarrito;
+        private System.Windows.Forms.Timer tmrTiempoActivo;
+        private GroupBox grpModo;
+        private RadioButton rdbCredito;
+        private RadioButton rdbEfectivo;
+        private Button btnBorrar;
         private DataGridViewTextBoxColumn IdProd;
         private DataGridViewTextBoxColumn Marca;
         private DataGridViewTextBoxColumn Origen;
         private DataGridViewTextBoxColumn Categoria;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Stock;
-        private System.Windows.Forms.Timer tmrTiempoActivo;
-        private GroupBox grpModo;
-        private RadioButton rdbCredito;
-        private RadioButton rdbEfectivo;
-        private Button btnBorrar;
     }
 }

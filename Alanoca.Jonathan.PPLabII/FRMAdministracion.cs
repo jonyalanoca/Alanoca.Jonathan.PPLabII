@@ -241,5 +241,11 @@ namespace Labo_tp1
             CargarDatagrid();
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            FRMAgregar frmAgregar = new FRMAgregar();
+            frmAgregar.ShowDialog();
+        }
     }
 }
