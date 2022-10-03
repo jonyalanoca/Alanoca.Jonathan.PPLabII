@@ -24,7 +24,8 @@ namespace Entidades
         public override string MostrarInfo()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"INFORMACION DEL CELULAR");
+            sb.AppendLine($"INFORMACION CELULAR");
+            sb.AppendLine($"ID: {this.id}");
             sb.AppendLine($"Marca: {this.marca}");
             sb.AppendLine($"Modelo: {this.modelo}");
             sb.AppendLine($"Origen: {this.origen}");

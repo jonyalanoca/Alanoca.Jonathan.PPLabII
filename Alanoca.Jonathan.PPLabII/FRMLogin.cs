@@ -90,5 +90,11 @@ namespace Labo_tp1
             FRMVentas formVentas = new FRMVentas(txtEmail.Text);
             formVentas.ShowDialog();
         }
+
+        private void btnSeccAdmin_Click(object sender, EventArgs e)
+        {
+            FRMAdministracion formAdministracion= new FRMAdministracion();
+            formAdministracion.ShowDialog();
+        }
     }
 }

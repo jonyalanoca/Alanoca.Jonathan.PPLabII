@@ -5,7 +5,8 @@ namespace test
     {
         static void Main(string[] args)
         {
-            TransformadorTiempo.Transformar(3721);
+            string nombre = "jonathan";
+            Console.WriteLine(nombre.Contains("than"));
 
         }
     }

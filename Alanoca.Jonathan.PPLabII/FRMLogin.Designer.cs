@@ -174,6 +174,7 @@
             this.btnSeccAdmin.Text = "Administrar";
             this.btnSeccAdmin.UseVisualStyleBackColor = false;
             this.btnSeccAdmin.Visible = false;
+            this.btnSeccAdmin.Click += new System.EventHandler(this.btnSeccAdmin_Click);
             // 
             // btnHCodearVendedor
             // 

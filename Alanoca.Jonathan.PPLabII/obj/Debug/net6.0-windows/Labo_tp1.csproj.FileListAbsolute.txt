@@ -56,3 +56,4 @@ C:\Users\jonya\Desktop\Alanoca.Jonathan.PPLabII\Alanoca.Jonathan.PPLabII\obj\Deb
 C:\Users\jonya\Desktop\Alanoca.Jonathan.PPLabII\Alanoca.Jonathan.PPLabII\obj\Debug\net6.0-windows\ref\Labo_tp1.dll
 C:\Users\jonya\Desktop\Alanoca.Jonathan.PPLabII\Alanoca.Jonathan.PPLabII\obj\Debug\net6.0-windows\Labo_tp1.FRMVentas.resources
 C:\Users\jonya\Desktop\Alanoca.Jonathan.PPLabII\Alanoca.Jonathan.PPLabII\obj\Debug\net6.0-windows\Labo_tp1.FRMFactura.resources
+C:\Users\jonya\Desktop\Alanoca.Jonathan.PPLabII\Alanoca.Jonathan.PPLabII\obj\Debug\net6.0-windows\Labo_tp1.FRMAdministracion.resources

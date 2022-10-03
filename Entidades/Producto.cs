@@ -64,14 +64,14 @@ namespace Entidades
         public virtual string MostrarInfo()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"iNFORMACION PRODUCTO GENERAL");
-            sb.AppendLine($"Id de producto: {this.id}");
+            sb.AppendLine($"PRODUCTO GENERAL");
+            sb.AppendLine($"ID: {this.id}");
             sb.AppendLine($"Producto: {this.nombre}");
             sb.AppendLine($"Marca: {this.marca}");
             sb.AppendLine($"Origen: {this.origen}");
             sb.AppendLine($"Precio: {this.precio}");
             sb.AppendLine($"Categoria: {this.categoria.ToString()}");
-            sb.AppendLine($"Stock disponible: {this.stock} unidades");
+            sb.AppendLine($"Stock disponible: {this.stock}");
             return sb.ToString();
         }
         public  static bool operator ==(Producto p, int id)
