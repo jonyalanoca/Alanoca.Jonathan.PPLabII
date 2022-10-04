@@ -52,6 +52,7 @@ namespace Entidades
         public static int IdProducto
         {
             get { return Negocio.idProducto; }
+            set { Negocio.idProducto = value; }
         }
         public static List<Usuario> UsuariosList
         {

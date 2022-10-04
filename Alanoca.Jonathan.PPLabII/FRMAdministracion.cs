@@ -246,6 +246,9 @@ namespace Labo_tp1
         {
             FRMAgregar frmAgregar = new FRMAgregar();
             frmAgregar.ShowDialog();
+            dgvListaProductos.Rows.Clear();
+            Filtrar();
+            CargarDatagrid();
         }
     }
 }

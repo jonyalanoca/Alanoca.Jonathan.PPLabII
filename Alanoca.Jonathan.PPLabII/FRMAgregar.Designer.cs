@@ -58,20 +58,6 @@
             this.btnBorrar = new System.Windows.Forms.Button();
             this.grpDatosNote = new System.Windows.Forms.GroupBox();
             this.chkMemoria = new System.Windows.Forms.CheckBox();
-            this.lblRam_data = new System.Windows.Forms.Label();
-            this.lblGb = new System.Windows.Forms.Label();
-            this.rdbM2 = new System.Windows.Forms.RadioButton();
-            this.rdbHdd = new System.Windows.Forms.RadioButton();
-            this.rdbSsd = new System.Windows.Forms.RadioButton();
-            this.chkRam = new System.Windows.Forms.CheckBox();
-            this.chkMicro = new System.Windows.Forms.CheckBox();
-            this.txtMicro = new System.Windows.Forms.TextBox();
-            this.lblMicro = new System.Windows.Forms.Label();
-            this.lblGb2 = new System.Windows.Forms.Label();
-            this.lblRam = new System.Windows.Forms.Label();
-            this.tkbRam = new System.Windows.Forms.TrackBar();
-            this.cmbMemoria = new System.Windows.Forms.ComboBox();
-            this.lblMemoria = new System.Windows.Forms.Label();
             this.grpCelular = new System.Windows.Forms.GroupBox();
             this.lblCelCam_data = new System.Windows.Forms.Label();
             this.chkCelMemoria = new System.Windows.Forms.CheckBox();
@@ -91,14 +77,29 @@
             this.chkCelModelo = new System.Windows.Forms.CheckBox();
             this.lblCelModelo = new System.Windows.Forms.Label();
             this.txtCelModelo = new System.Windows.Forms.TextBox();
+            this.lblRam_data = new System.Windows.Forms.Label();
+            this.lblGb = new System.Windows.Forms.Label();
+            this.rdbM2 = new System.Windows.Forms.RadioButton();
+            this.rdbHdd = new System.Windows.Forms.RadioButton();
+            this.rdbSsd = new System.Windows.Forms.RadioButton();
+            this.chkRam = new System.Windows.Forms.CheckBox();
+            this.chkMicro = new System.Windows.Forms.CheckBox();
+            this.txtMicro = new System.Windows.Forms.TextBox();
+            this.lblMicro = new System.Windows.Forms.Label();
+            this.lblGb2 = new System.Windows.Forms.Label();
+            this.lblRam = new System.Windows.Forms.Label();
+            this.tkbRam = new System.Windows.Forms.TrackBar();
+            this.cmbMemoria = new System.Windows.Forms.ComboBox();
+            this.lblMemoria = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.grpDatosGenerales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nupPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tkbStock)).BeginInit();
             this.grpTipo.SuspendLayout();
             this.grpDatosNote.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tkbRam)).BeginInit();
             this.grpCelular.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tkbCelCam)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tkbRam)).BeginInit();
             this.SuspendLayout();
             // 
             // grpDatosGenerales
@@ -125,7 +126,7 @@
             this.grpDatosGenerales.Controls.Add(this.lblPrecio);
             this.grpDatosGenerales.Controls.Add(this.lblCategoria);
             this.grpDatosGenerales.ForeColor = System.Drawing.Color.White;
-            this.grpDatosGenerales.Location = new System.Drawing.Point(12, 107);
+            this.grpDatosGenerales.Location = new System.Drawing.Point(12, 125);
             this.grpDatosGenerales.Name = "grpDatosGenerales";
             this.grpDatosGenerales.Size = new System.Drawing.Size(271, 244);
             this.grpDatosGenerales.TabIndex = 27;
@@ -279,7 +280,7 @@
             this.lblStock_data.AutoSize = true;
             this.lblStock_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblStock_data.ForeColor = System.Drawing.Color.White;
-            this.lblStock_data.Location = new System.Drawing.Point(228, 193);
+            this.lblStock_data.Location = new System.Drawing.Point(217, 193);
             this.lblStock_data.Name = "lblStock_data";
             this.lblStock_data.Size = new System.Drawing.Size(19, 21);
             this.lblStock_data.TabIndex = 36;
@@ -317,10 +318,10 @@
             // 
             // tkbStock
             // 
-            this.tkbStock.Location = new System.Drawing.Point(85, 192);
+            this.tkbStock.Location = new System.Drawing.Point(86, 190);
             this.tkbStock.Maximum = 100;
             this.tkbStock.Name = "tkbStock";
-            this.tkbStock.Size = new System.Drawing.Size(149, 45);
+            this.tkbStock.Size = new System.Drawing.Size(137, 45);
             this.tkbStock.TabIndex = 33;
             this.tkbStock.Scroll += new System.EventHandler(this.tkbStock_Scroll);
             // 
@@ -361,9 +362,9 @@
             this.grpTipo.Controls.Add(this.cmbSeleccionProd);
             this.grpTipo.Controls.Add(this.label2);
             this.grpTipo.ForeColor = System.Drawing.Color.White;
-            this.grpTipo.Location = new System.Drawing.Point(12, 1);
+            this.grpTipo.Location = new System.Drawing.Point(12, 12);
             this.grpTipo.Name = "grpTipo";
-            this.grpTipo.Size = new System.Drawing.Size(271, 100);
+            this.grpTipo.Size = new System.Drawing.Size(271, 107);
             this.grpTipo.TabIndex = 28;
             this.grpTipo.TabStop = false;
             this.grpTipo.Text = "Producto Tipo";
@@ -376,7 +377,7 @@
             "GENERICO",
             "NOTEBOOK",
             "CELULAR"});
-            this.cmbSeleccionProd.Location = new System.Drawing.Point(7, 52);
+            this.cmbSeleccionProd.Location = new System.Drawing.Point(9, 62);
             this.cmbSeleccionProd.Name = "cmbSeleccionProd";
             this.cmbSeleccionProd.Size = new System.Drawing.Size(240, 23);
             this.cmbSeleccionProd.TabIndex = 52;
@@ -387,7 +388,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(7, 21);
+            this.label2.Location = new System.Drawing.Point(9, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(242, 21);
             this.label2.TabIndex = 51;
@@ -401,7 +402,7 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(314, 63);
+            this.btnAgregar.Location = new System.Drawing.Point(322, 23);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(197, 28);
             this.btnAgregar.TabIndex = 29;
@@ -416,7 +417,7 @@
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
-            this.btnBorrar.Location = new System.Drawing.Point(314, 19);
+            this.btnBorrar.Location = new System.Drawing.Point(322, 57);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(197, 28);
             this.btnBorrar.TabIndex = 30;
@@ -427,6 +428,7 @@
             // grpDatosNote
             // 
             this.grpDatosNote.Controls.Add(this.chkMemoria);
+            this.grpDatosNote.Controls.Add(this.grpCelular);
             this.grpDatosNote.Controls.Add(this.lblRam_data);
             this.grpDatosNote.Controls.Add(this.lblGb);
             this.grpDatosNote.Controls.Add(this.rdbM2);
@@ -442,7 +444,7 @@
             this.grpDatosNote.Controls.Add(this.cmbMemoria);
             this.grpDatosNote.Controls.Add(this.lblMemoria);
             this.grpDatosNote.ForeColor = System.Drawing.Color.White;
-            this.grpDatosNote.Location = new System.Drawing.Point(286, 107);
+            this.grpDatosNote.Location = new System.Drawing.Point(286, 125);
             this.grpDatosNote.Name = "grpDatosNote";
             this.grpDatosNote.Size = new System.Drawing.Size(255, 244);
             this.grpDatosNote.TabIndex = 51;
@@ -460,160 +462,6 @@
             this.chkMemoria.Size = new System.Drawing.Size(15, 14);
             this.chkMemoria.TabIndex = 55;
             this.chkMemoria.UseVisualStyleBackColor = true;
-            // 
-            // lblRam_data
-            // 
-            this.lblRam_data.AutoSize = true;
-            this.lblRam_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRam_data.ForeColor = System.Drawing.Color.White;
-            this.lblRam_data.Location = new System.Drawing.Point(159, 191);
-            this.lblRam_data.Name = "lblRam_data";
-            this.lblRam_data.Size = new System.Drawing.Size(19, 21);
-            this.lblRam_data.TabIndex = 54;
-            this.lblRam_data.Text = "0";
-            this.lblRam_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblGb
-            // 
-            this.lblGb.AutoSize = true;
-            this.lblGb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblGb.ForeColor = System.Drawing.Color.White;
-            this.lblGb.Location = new System.Drawing.Point(194, 116);
-            this.lblGb.Name = "lblGb";
-            this.lblGb.Size = new System.Drawing.Size(31, 21);
-            this.lblGb.TabIndex = 51;
-            this.lblGb.Text = "GB";
-            this.lblGb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // rdbM2
-            // 
-            this.rdbM2.AutoSize = true;
-            this.rdbM2.Location = new System.Drawing.Point(124, 142);
-            this.rdbM2.Name = "rdbM2";
-            this.rdbM2.Size = new System.Drawing.Size(42, 19);
-            this.rdbM2.TabIndex = 53;
-            this.rdbM2.Text = "M2";
-            this.rdbM2.UseVisualStyleBackColor = true;
-            // 
-            // rdbHdd
-            // 
-            this.rdbHdd.AutoSize = true;
-            this.rdbHdd.Location = new System.Drawing.Point(68, 142);
-            this.rdbHdd.Name = "rdbHdd";
-            this.rdbHdd.Size = new System.Drawing.Size(50, 19);
-            this.rdbHdd.TabIndex = 52;
-            this.rdbHdd.Text = "HDD";
-            this.rdbHdd.UseVisualStyleBackColor = true;
-            // 
-            // rdbSsd
-            // 
-            this.rdbSsd.AutoSize = true;
-            this.rdbSsd.Checked = true;
-            this.rdbSsd.Location = new System.Drawing.Point(15, 142);
-            this.rdbSsd.Name = "rdbSsd";
-            this.rdbSsd.Size = new System.Drawing.Size(45, 19);
-            this.rdbSsd.TabIndex = 51;
-            this.rdbSsd.TabStop = true;
-            this.rdbSsd.Text = "SSD";
-            this.rdbSsd.UseVisualStyleBackColor = true;
-            // 
-            // chkRam
-            // 
-            this.chkRam.AutoSize = true;
-            this.chkRam.Enabled = false;
-            this.chkRam.Location = new System.Drawing.Point(227, 199);
-            this.chkRam.Name = "chkRam";
-            this.chkRam.Size = new System.Drawing.Size(15, 14);
-            this.chkRam.TabIndex = 50;
-            this.chkRam.UseVisualStyleBackColor = true;
-            // 
-            // chkMicro
-            // 
-            this.chkMicro.AutoSize = true;
-            this.chkMicro.Enabled = false;
-            this.chkMicro.Location = new System.Drawing.Point(227, 62);
-            this.chkMicro.Name = "chkMicro";
-            this.chkMicro.Size = new System.Drawing.Size(15, 14);
-            this.chkMicro.TabIndex = 45;
-            this.chkMicro.UseVisualStyleBackColor = true;
-            // 
-            // txtMicro
-            // 
-            this.txtMicro.Location = new System.Drawing.Point(15, 55);
-            this.txtMicro.Name = "txtMicro";
-            this.txtMicro.Size = new System.Drawing.Size(192, 23);
-            this.txtMicro.TabIndex = 30;
-            this.txtMicro.TextChanged += new System.EventHandler(this.txrMicro_TextChanged);
-            // 
-            // lblMicro
-            // 
-            this.lblMicro.AutoSize = true;
-            this.lblMicro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMicro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblMicro.Location = new System.Drawing.Point(68, 31);
-            this.lblMicro.Name = "lblMicro";
-            this.lblMicro.Size = new System.Drawing.Size(139, 21);
-            this.lblMicro.TabIndex = 39;
-            this.lblMicro.Text = "Microprocesador";
-            // 
-            // lblGb2
-            // 
-            this.lblGb2.AutoSize = true;
-            this.lblGb2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblGb2.ForeColor = System.Drawing.Color.White;
-            this.lblGb2.Location = new System.Drawing.Point(194, 192);
-            this.lblGb2.Name = "lblGb2";
-            this.lblGb2.Size = new System.Drawing.Size(31, 21);
-            this.lblGb2.TabIndex = 36;
-            this.lblGb2.Text = "GB";
-            this.lblGb2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblRam
-            // 
-            this.lblRam.AutoSize = true;
-            this.lblRam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblRam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblRam.Location = new System.Drawing.Point(105, 165);
-            this.lblRam.Name = "lblRam";
-            this.lblRam.Size = new System.Drawing.Size(46, 21);
-            this.lblRam.TabIndex = 35;
-            this.lblRam.Text = "RAM";
-            // 
-            // tkbRam
-            // 
-            this.tkbRam.Location = new System.Drawing.Point(8, 190);
-            this.tkbRam.Maximum = 64;
-            this.tkbRam.Name = "tkbRam";
-            this.tkbRam.Size = new System.Drawing.Size(158, 45);
-            this.tkbRam.TabIndex = 33;
-            this.tkbRam.Scroll += new System.EventHandler(this.trbRam_Scroll);
-            // 
-            // cmbMemoria
-            // 
-            this.cmbMemoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMemoria.FormattingEnabled = true;
-            this.cmbMemoria.Items.AddRange(new object[] {
-            "128",
-            "256",
-            "521",
-            "1024",
-            "2048"});
-            this.cmbMemoria.Location = new System.Drawing.Point(15, 113);
-            this.cmbMemoria.Name = "cmbMemoria";
-            this.cmbMemoria.Size = new System.Drawing.Size(173, 23);
-            this.cmbMemoria.TabIndex = 32;
-            this.cmbMemoria.SelectedIndexChanged += new System.EventHandler(this.cmbMemoria_SelectedIndexChanged);
-            // 
-            // lblMemoria
-            // 
-            this.lblMemoria.AutoSize = true;
-            this.lblMemoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMemoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblMemoria.Location = new System.Drawing.Point(105, 84);
-            this.lblMemoria.Name = "lblMemoria";
-            this.lblMemoria.Size = new System.Drawing.Size(83, 21);
-            this.lblMemoria.TabIndex = 31;
-            this.lblMemoria.Text = "Memoria ";
             // 
             // grpCelular
             // 
@@ -636,7 +484,7 @@
             this.grpCelular.Controls.Add(this.lblCelModelo);
             this.grpCelular.Controls.Add(this.txtCelModelo);
             this.grpCelular.ForeColor = System.Drawing.Color.White;
-            this.grpCelular.Location = new System.Drawing.Point(547, 107);
+            this.grpCelular.Location = new System.Drawing.Point(0, 0);
             this.grpCelular.Name = "grpCelular";
             this.grpCelular.Size = new System.Drawing.Size(255, 244);
             this.grpCelular.TabIndex = 52;
@@ -869,13 +717,182 @@
             this.txtCelModelo.TabIndex = 51;
             this.txtCelModelo.TextChanged += new System.EventHandler(this.txtCelModelo_TextChanged);
             // 
+            // lblRam_data
+            // 
+            this.lblRam_data.AutoSize = true;
+            this.lblRam_data.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRam_data.ForeColor = System.Drawing.Color.White;
+            this.lblRam_data.Location = new System.Drawing.Point(159, 191);
+            this.lblRam_data.Name = "lblRam_data";
+            this.lblRam_data.Size = new System.Drawing.Size(19, 21);
+            this.lblRam_data.TabIndex = 54;
+            this.lblRam_data.Text = "0";
+            this.lblRam_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblGb
+            // 
+            this.lblGb.AutoSize = true;
+            this.lblGb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblGb.ForeColor = System.Drawing.Color.White;
+            this.lblGb.Location = new System.Drawing.Point(194, 116);
+            this.lblGb.Name = "lblGb";
+            this.lblGb.Size = new System.Drawing.Size(31, 21);
+            this.lblGb.TabIndex = 51;
+            this.lblGb.Text = "GB";
+            this.lblGb.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // rdbM2
+            // 
+            this.rdbM2.AutoSize = true;
+            this.rdbM2.Location = new System.Drawing.Point(124, 142);
+            this.rdbM2.Name = "rdbM2";
+            this.rdbM2.Size = new System.Drawing.Size(42, 19);
+            this.rdbM2.TabIndex = 53;
+            this.rdbM2.Text = "M2";
+            this.rdbM2.UseVisualStyleBackColor = true;
+            // 
+            // rdbHdd
+            // 
+            this.rdbHdd.AutoSize = true;
+            this.rdbHdd.Location = new System.Drawing.Point(68, 142);
+            this.rdbHdd.Name = "rdbHdd";
+            this.rdbHdd.Size = new System.Drawing.Size(50, 19);
+            this.rdbHdd.TabIndex = 52;
+            this.rdbHdd.Text = "HDD";
+            this.rdbHdd.UseVisualStyleBackColor = true;
+            // 
+            // rdbSsd
+            // 
+            this.rdbSsd.AutoSize = true;
+            this.rdbSsd.Checked = true;
+            this.rdbSsd.Location = new System.Drawing.Point(15, 142);
+            this.rdbSsd.Name = "rdbSsd";
+            this.rdbSsd.Size = new System.Drawing.Size(45, 19);
+            this.rdbSsd.TabIndex = 51;
+            this.rdbSsd.TabStop = true;
+            this.rdbSsd.Text = "SSD";
+            this.rdbSsd.UseVisualStyleBackColor = true;
+            // 
+            // chkRam
+            // 
+            this.chkRam.AutoSize = true;
+            this.chkRam.Enabled = false;
+            this.chkRam.Location = new System.Drawing.Point(227, 199);
+            this.chkRam.Name = "chkRam";
+            this.chkRam.Size = new System.Drawing.Size(15, 14);
+            this.chkRam.TabIndex = 50;
+            this.chkRam.UseVisualStyleBackColor = true;
+            // 
+            // chkMicro
+            // 
+            this.chkMicro.AutoSize = true;
+            this.chkMicro.Enabled = false;
+            this.chkMicro.Location = new System.Drawing.Point(227, 62);
+            this.chkMicro.Name = "chkMicro";
+            this.chkMicro.Size = new System.Drawing.Size(15, 14);
+            this.chkMicro.TabIndex = 45;
+            this.chkMicro.UseVisualStyleBackColor = true;
+            // 
+            // txtMicro
+            // 
+            this.txtMicro.Location = new System.Drawing.Point(15, 55);
+            this.txtMicro.Name = "txtMicro";
+            this.txtMicro.Size = new System.Drawing.Size(192, 23);
+            this.txtMicro.TabIndex = 30;
+            this.txtMicro.TextChanged += new System.EventHandler(this.txrMicro_TextChanged);
+            // 
+            // lblMicro
+            // 
+            this.lblMicro.AutoSize = true;
+            this.lblMicro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMicro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblMicro.Location = new System.Drawing.Point(57, 31);
+            this.lblMicro.Name = "lblMicro";
+            this.lblMicro.Size = new System.Drawing.Size(139, 21);
+            this.lblMicro.TabIndex = 39;
+            this.lblMicro.Text = "Microprocesador";
+            // 
+            // lblGb2
+            // 
+            this.lblGb2.AutoSize = true;
+            this.lblGb2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblGb2.ForeColor = System.Drawing.Color.White;
+            this.lblGb2.Location = new System.Drawing.Point(194, 192);
+            this.lblGb2.Name = "lblGb2";
+            this.lblGb2.Size = new System.Drawing.Size(31, 21);
+            this.lblGb2.TabIndex = 36;
+            this.lblGb2.Text = "GB";
+            this.lblGb2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblRam
+            // 
+            this.lblRam.AutoSize = true;
+            this.lblRam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblRam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblRam.Location = new System.Drawing.Point(105, 165);
+            this.lblRam.Name = "lblRam";
+            this.lblRam.Size = new System.Drawing.Size(46, 21);
+            this.lblRam.TabIndex = 35;
+            this.lblRam.Text = "RAM";
+            // 
+            // tkbRam
+            // 
+            this.tkbRam.Location = new System.Drawing.Point(8, 190);
+            this.tkbRam.Maximum = 64;
+            this.tkbRam.Name = "tkbRam";
+            this.tkbRam.Size = new System.Drawing.Size(158, 45);
+            this.tkbRam.TabIndex = 33;
+            this.tkbRam.Scroll += new System.EventHandler(this.trbRam_Scroll);
+            // 
+            // cmbMemoria
+            // 
+            this.cmbMemoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMemoria.FormattingEnabled = true;
+            this.cmbMemoria.Items.AddRange(new object[] {
+            "128",
+            "256",
+            "521",
+            "1024",
+            "2048"});
+            this.cmbMemoria.Location = new System.Drawing.Point(15, 113);
+            this.cmbMemoria.Name = "cmbMemoria";
+            this.cmbMemoria.Size = new System.Drawing.Size(173, 23);
+            this.cmbMemoria.TabIndex = 32;
+            this.cmbMemoria.SelectedIndexChanged += new System.EventHandler(this.cmbMemoria_SelectedIndexChanged);
+            // 
+            // lblMemoria
+            // 
+            this.lblMemoria.AutoSize = true;
+            this.lblMemoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMemoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblMemoria.Location = new System.Drawing.Point(78, 86);
+            this.lblMemoria.Name = "lblMemoria";
+            this.lblMemoria.Size = new System.Drawing.Size(83, 21);
+            this.lblMemoria.TabIndex = 31;
+            this.lblMemoria.Text = "Memoria ";
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(322, 91);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(197, 28);
+            this.btnVolver.TabIndex = 53;
+            this.btnVolver.Text = "Volver a Administración";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // FRMAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(808, 358);
-            this.Controls.Add(this.grpCelular);
+            this.ClientSize = new System.Drawing.Size(553, 382);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.grpDatosNote);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnAgregar);
@@ -895,10 +912,10 @@
             this.grpTipo.PerformLayout();
             this.grpDatosNote.ResumeLayout(false);
             this.grpDatosNote.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tkbRam)).EndInit();
             this.grpCelular.ResumeLayout(false);
             this.grpCelular.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tkbCelCam)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tkbRam)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -967,5 +984,6 @@
         private CheckBox chkMemoria;
         private CheckBox chkRam;
         private Label lblCelCam_data;
+        private Button btnVolver;
     }
 }

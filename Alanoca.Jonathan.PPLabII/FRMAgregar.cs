@@ -79,7 +79,48 @@ namespace Labo_tp1
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (cmbSeleccionProd.SelectedIndex == 0 && ValidarCamposPrincipales() && chkNombre.Checked == true)
+            {
+                Producto productoNuevo = new Producto(Negocio.IdProducto,txtNombre.Text,txtMarca.Text,(float)nupPrecio.Value,txtOrigen.Text,BuscarCatogoriaByString(cmbCategoria.Text),tkbStock.Value);
+                AgrearProducto(productoNuevo);
+            }
+            else if (cmbSeleccionProd.SelectedIndex == 1 && ValidarCamposPrincipales() && chkMicro.Checked==true && chkMemoria.Checked==true && chkRam.Checked == true)
+            {
+                Notebook productoNuevo = new Notebook(Negocio.IdProducto,txtMarca.Text,(float)nupPrecio.Value,txtOrigen.Text,BuscarCatogoriaByString(cmbCategoria.Text),tkbStock.Value,txtMicro.Text, BuscarMemoriaByRadioButton(),int.Parse(cmbMemoria.Text),tkbRam.Value);
+                AgrearProducto(productoNuevo);
+            }
+            else if (cmbSeleccionProd.SelectedIndex == 2 && ValidarCamposPrincipales() && chkCelModelo.Checked==true && chkCelSo.Checked==true && chkCelCam.Checked==true && chkCelPulgadas.Checked==true && chkCelMemoria.Checked == true)
+            {
+                Celular productoNuevo = new Celular(
+                    Negocio.IdProducto,
+                    txtMarca.Text,
+                    (float)nupPrecio.Value,
+                    txtOrigen.Text,
+                    BuscarCatogoriaByString(cmbCategoria.Text),
+                    tkbStock.Value,
+                    txtCelModelo.Text,
+                    cmbCelSo.Text,
+                    (float)tkbCelCam.Value,
+                    float.Parse(cmbCelPulgadas.Text),
+                    int.Parse(cmbCelMemoria.Text)
+                    );
+                AgrearProducto(productoNuevo);
+            }
+            else
+            {
+                MessageBox.Show("Porfavor revise que tiene los campos bien completados\nConsejo: revise los checks", "Faltan Datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            BorrarCampos();
 
+            
+        }
+        private bool ValidarCamposPrincipales()
+        {
+            if (chkMarca.Checked==true && chkOrigen.Checked == true && chkCategoria.Checked == true && chkPrecio.Checked == true && chkStock.Checked == true)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -156,6 +197,39 @@ namespace Labo_tp1
             cmbCelPulgadas.SelectedIndex = -1;
             cmbCelMemoria.SelectedIndex = -1;
         }
+        private ECategoria BuscarCatogoriaByString(string catString)
+        {
+            ECategoria auxCategoria=ECategoria.Otros;
+            foreach(var i in Enum.GetValues(typeof(ECategoria))){
+                if (i.ToString() == catString)
+                {
+                    auxCategoria = (ECategoria)i;
+                }
+            }
+            return auxCategoria;
+        }
+        private ETipoMemoria BuscarMemoriaByRadioButton()
+        {
+            ETipoMemoria auxTipo = ETipoMemoria.SSD;
+            if (rdbHdd.Checked == true)
+            {
+                auxTipo = ETipoMemoria.HDD;
+            }else if (rdbM2.Checked == true)
+            {
+                auxTipo = ETipoMemoria.M2;
+            }
+            return auxTipo;
+        }
+        private void AgrearProducto(Producto prod)
+        {
+            if(MessageBox.Show("¿Seguro que desea agregar el siguiente producto?\n" + prod.MostrarInfo(), "Añadir producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                Negocio.ProductosList.Add(prod);
+                Negocio.IdProducto++;
+                MessageBox.Show("¡Se agregó el producto!", "Producto añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+        }
         private void txtOrigen_TextChanged(object sender, EventArgs e)
         {
             VerificarVacio(txtOrigen, chkOrigen);
@@ -224,6 +298,9 @@ namespace Labo_tp1
             }
         }
 
-        
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
