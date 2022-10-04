@@ -15,11 +15,13 @@ namespace Labo_tp1
     {
         private Dictionary<Producto, int> lista;
         private Usuario usuario;
-        public FRMFactura(Dictionary<Producto,int> lista, Usuario usuario)
+        private double recargo;
+        public FRMFactura(Dictionary<Producto,int> lista, Usuario usuario, double recargo)
         {
             InitializeComponent();
             this.lista = lista;
             this.usuario = usuario;
+            this.recargo = recargo;
         }
 
         private void FRMFactura_Load(object sender, EventArgs e)
@@ -45,11 +47,14 @@ namespace Labo_tp1
                 total += Subtotal;
 
             }
+
             lblIDs.Text = sbId.ToString();
             lblCantidades.Text = sbCant.ToString();
             lblPrecios.Text = sbPrecio.ToString();
             lblSubTotales.Text = sbTotal.ToString();
-            lblTotal_data.Text = total.ToString();
+            lblSubtotal_data.Text = total.ToString();
+            lblInteres_data.Text = this.recargo.ToString(); 
+            lblTotal_data.Text = (this.recargo+total).ToString();
 
         }
 

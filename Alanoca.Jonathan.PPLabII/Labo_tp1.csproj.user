@@ -13,6 +13,9 @@
     <Compile Update="FRMFactura.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FRMHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FRMLogin.cs">
       <SubType>Form</SubType>
     </Compile>

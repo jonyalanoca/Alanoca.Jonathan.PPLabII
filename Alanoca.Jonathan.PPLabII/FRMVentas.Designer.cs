@@ -50,7 +50,7 @@
             this.lblCumplir_data = new System.Windows.Forms.Label();
             this.lblActivo_data = new System.Windows.Forms.Label();
             this.lblVendedor_data = new System.Windows.Forms.Label();
-            this.lblFinalizar = new System.Windows.Forms.Button();
+            this.lblHistorial = new System.Windows.Forms.Button();
             this.lblSiguiente = new System.Windows.Forms.Button();
             this.lblCaja = new System.Windows.Forms.Label();
             this.lblCumplir = new System.Windows.Forms.Label();
@@ -280,7 +280,7 @@
             this.grpCaja.Controls.Add(this.lblCumplir_data);
             this.grpCaja.Controls.Add(this.lblActivo_data);
             this.grpCaja.Controls.Add(this.lblVendedor_data);
-            this.grpCaja.Controls.Add(this.lblFinalizar);
+            this.grpCaja.Controls.Add(this.lblHistorial);
             this.grpCaja.Controls.Add(this.lblSiguiente);
             this.grpCaja.Controls.Add(this.lblCaja);
             this.grpCaja.Controls.Add(this.lblCumplir);
@@ -344,20 +344,20 @@
             this.lblVendedor_data.Text = ".";
             this.lblVendedor_data.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblFinalizar
+            // lblHistorial
             // 
-            this.lblFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
-            this.lblFinalizar.FlatAppearance.BorderSize = 0;
-            this.lblFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFinalizar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFinalizar.ForeColor = System.Drawing.Color.White;
-            this.lblFinalizar.Location = new System.Drawing.Point(6, 445);
-            this.lblFinalizar.Name = "lblFinalizar";
-            this.lblFinalizar.Size = new System.Drawing.Size(278, 40);
-            this.lblFinalizar.TabIndex = 12;
-            this.lblFinalizar.Text = "Finalizar Jornada";
-            this.lblFinalizar.UseVisualStyleBackColor = false;
-            this.lblFinalizar.Click += new System.EventHandler(this.lblFinalizar_Click);
+            this.lblHistorial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(36)))), ((int)(((byte)(42)))));
+            this.lblHistorial.FlatAppearance.BorderSize = 0;
+            this.lblHistorial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblHistorial.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblHistorial.ForeColor = System.Drawing.Color.White;
+            this.lblHistorial.Location = new System.Drawing.Point(6, 445);
+            this.lblHistorial.Name = "lblHistorial";
+            this.lblHistorial.Size = new System.Drawing.Size(278, 40);
+            this.lblHistorial.TabIndex = 12;
+            this.lblHistorial.Text = "Ver Historial de Ventas";
+            this.lblHistorial.UseVisualStyleBackColor = false;
+            this.lblHistorial.Click += new System.EventHandler(this.lblFinalizar_Click);
             // 
             // lblSiguiente
             // 
@@ -680,7 +680,7 @@
         private Label lblVendedor;
         private Label lblNroCliente;
         private ListBox ltbCarrito;
-        private Button lblFinalizar;
+        private Button lblHistorial;
         private Button lblSiguiente;
         private GroupBox groupBox1;
         private Button btnFiltroComp;

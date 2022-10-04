@@ -21,18 +21,16 @@ namespace Labo_tp1
         private int numeroLista;
         private double precioTotal;
         private Random nroRandom;
-        private double ventaDelDia;
-        private int clientesAtendidos;
         private double dineroClinte;
         private bool clienteActivo;
-        public FRMVentas(string  email)
+        private Color color;
+        public FRMVentas(string  email,Color color)
         {
             InitializeComponent();
             this.listaCarrito = new Dictionary<Producto, int> ();
             this.numeroLista = 1;
             this.precioTotal = 0;
-            this.ventaDelDia = 0;
-            this.clientesAtendidos = 0;
+            this.color = color;
             this.clienteActivo = false;
             this.nroRandom = new Random();
             foreach(var i in Negocio.UsuariosList)
@@ -51,7 +49,7 @@ namespace Labo_tp1
             tmrTiempoActivo.Enabled = true;
             lblCajaDinero_data.Text = "$" +Negocio.DineroCaja.ToString();
             Size = new Size(320, 560);
-
+            this.BackColor = this.color;
         }
 
         private void grpCliente_Enter(object sender, EventArgs e)
@@ -135,6 +133,7 @@ namespace Labo_tp1
         }
         private void Filtrar(ECategoria categoria)
         {
+            
             dgvListaProductos.Rows.Clear();
             foreach (var i in Negocio.ProductosList)
             {
@@ -178,29 +177,56 @@ namespace Labo_tp1
             }
             return false;
         }
-
+        private void GuardarHistorial()
+        {
+            Venta venta=null;
+            double recargo = 0;
+            if (rdbEfectivo.Checked == true)
+            {
+                foreach (var i in this.listaCarrito)
+                {
+                    venta = new Venta(this.usuario, i.Key, i.Value);
+                    Negocio.AgregarVentaAHistorial(venta);
+                }
+            }
+            else
+            {
+                foreach (var i in this.listaCarrito)
+                {
+                    recargo = (i.Key.Precio * i.Value)*10/100;
+                    venta = new Venta(this.usuario, i.Key, i.Value,true,recargo);
+                    Negocio.AgregarVentaAHistorial(venta);
+                }
+            }
+            
+        }
         private void btnFiltroComp_Click(object sender, EventArgs e)
         {
+            Console.Beep(100, 300);
             Filtrar(ECategoria.Computación);
         }
 
         private void btnFiltroElecto_Click(object sender, EventArgs e)
         {
+            Console.Beep(200, 300);
             Filtrar(ECategoria.Electrodomesticos);
         }
 
         private void btnFiltroCelular_Click(object sender, EventArgs e)
         {
+            Console.Beep(300, 300);
             Filtrar(ECategoria.Celulares);
         }
 
         private void btnFiltroHerra_Click(object sender, EventArgs e)
         {
+            Console.Beep(400, 300);
             Filtrar(ECategoria.Herramientas);
         }
 
         private void btnFiltroTodo_Click(object sender, EventArgs e)
         {
+            Console.Beep(500, 300);
             dgvListaProductos.Rows.Clear();
             SinFiltro();
         }
@@ -227,37 +253,43 @@ namespace Labo_tp1
 
         private void btnVender_Click(object sender, EventArgs e)
         {
+            double recargo = 0;
+            bool seVende = false;
             if (lblTotalCarrito_data.Text != "0")
             {
-                if (this.dineroClinte >= this.precioTotal)
+                recargo = this.precioTotal * (float)10 / 100;
+                if (rdbEfectivo.Checked && this.dineroClinte >= this.precioTotal)
                 {
-                    if (rdbEfectivo.Checked)
-                    {
-                        Negocio.DineroCaja += this.precioTotal;
-                    }
-                    else
-                    {
-                        Negocio.DineroCaja += (this.precioTotal * (float)10 / 100) + this.precioTotal;
-                        MessageBox.Show("Se hizo un recargo del 10% de pago con targeta", "Información de pago", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    lblCajaDinero_data.Text = Negocio.DineroCaja.ToString();
-                    this.clientesAtendidos++;
-                    this.ventaDelDia += this.precioTotal;
-                    if (MessageBox.Show("¿Desea ver la factura?", "Venta exitosa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        FRMFactura factura = new FRMFactura(this.listaCarrito, this.usuario);
-                        factura.ShowDialog();
-                    }
-                    ActualizarProductos();
-                    ResetearDatos();
-                    Size = new Size(320, 560);
-                    this.clienteActivo = false;
+                    Negocio.DineroCaja += this.precioTotal;
+                    seVende = true;
+                }
+                else if(rdbCredito.Checked && this.dineroClinte >= this.precioTotal+recargo)
+                {
+                        
+                    Negocio.DineroCaja +=  this.precioTotal+recargo;
+                    seVende = true;
+                    MessageBox.Show("Se hizo un recargo del 10% de pago con targeta", "Información de pago", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     MessageBox.Show("El cliente no cuenta con dinero suficiente.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                
+                if (seVende == true)
+                {
+                    lblCajaDinero_data.Text = Negocio.DineroCaja.ToString();
+                    if (MessageBox.Show("¿Desea ver la factura?", "Venta exitosa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        this.Hide();
+                        FRMFactura frmFactura = new FRMFactura(this.listaCarrito, this.usuario, recargo);
+                        frmFactura.ShowDialog();
+                        this.Show();
+                    }
+                    GuardarHistorial();
+                    ActualizarProductos();
+                    ResetearDatos();
+                    Size = new Size(320, 560);
+                    this.clienteActivo = false;
+                }
             }
             else
             {
@@ -283,7 +315,10 @@ namespace Labo_tp1
 
         private void lblFinalizar_Click(object sender, EventArgs e)
         {
-            
+            FRMHistorial frmHistorial = new FRMHistorial();
+            this.Hide();
+            frmHistorial.ShowDialog();
+            this.Show();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

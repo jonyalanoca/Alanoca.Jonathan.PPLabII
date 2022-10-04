@@ -57,6 +57,12 @@
             this.lblNroFatura_data = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblInteres_data = new System.Windows.Forms.Label();
+            this.lblPeso2 = new System.Windows.Forms.Label();
+            this.lblInteres = new System.Windows.Forms.Label();
+            this.lblSubtotal_data = new System.Windows.Forms.Label();
+            this.lblPeso3 = new System.Windows.Forms.Label();
+            this.lblSubtotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNombreEmpresa
@@ -83,7 +89,7 @@
             // 
             this.lblAsteriscos2.AutoSize = true;
             this.lblAsteriscos2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAsteriscos2.Location = new System.Drawing.Point(12, 389);
+            this.lblAsteriscos2.Location = new System.Drawing.Point(12, 419);
             this.lblAsteriscos2.Name = "lblAsteriscos2";
             this.lblAsteriscos2.Size = new System.Drawing.Size(375, 19);
             this.lblAsteriscos2.TabIndex = 2;
@@ -93,7 +99,7 @@
             // 
             this.lblAsteriscos3.AutoSize = true;
             this.lblAsteriscos3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAsteriscos3.Location = new System.Drawing.Point(12, 438);
+            this.lblAsteriscos3.Location = new System.Drawing.Point(12, 468);
             this.lblAsteriscos3.Name = "lblAsteriscos3";
             this.lblAsteriscos3.Size = new System.Drawing.Size(375, 19);
             this.lblAsteriscos3.TabIndex = 3;
@@ -103,7 +109,7 @@
             // 
             this.lblGracias.AutoSize = true;
             this.lblGracias.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblGracias.Location = new System.Drawing.Point(106, 408);
+            this.lblGracias.Location = new System.Drawing.Point(106, 438);
             this.lblGracias.Name = "lblGracias";
             this.lblGracias.Size = new System.Drawing.Size(167, 19);
             this.lblGracias.TabIndex = 4;
@@ -233,7 +239,7 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTotal.Location = new System.Drawing.Point(12, 359);
+            this.lblTotal.Location = new System.Drawing.Point(12, 400);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(42, 19);
             this.lblTotal.TabIndex = 17;
@@ -278,7 +284,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(292, 361);
+            this.label4.Location = new System.Drawing.Point(302, 402);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(13, 15);
             this.label4.TabIndex = 23;
@@ -287,7 +293,7 @@
             // lblTotal_data
             // 
             this.lblTotal_data.AutoSize = true;
-            this.lblTotal_data.Location = new System.Drawing.Point(311, 361);
+            this.lblTotal_data.Location = new System.Drawing.Point(321, 402);
             this.lblTotal_data.Name = "lblTotal_data";
             this.lblTotal_data.Size = new System.Drawing.Size(13, 15);
             this.lblTotal_data.TabIndex = 24;
@@ -322,7 +328,7 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(16, 470);
+            this.btnImprimir.Location = new System.Drawing.Point(16, 500);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 23);
             this.btnImprimir.TabIndex = 28;
@@ -332,7 +338,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(305, 470);
+            this.btnCerrar.Location = new System.Drawing.Point(305, 500);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 29;
@@ -340,12 +346,74 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // lblInteres_data
+            // 
+            this.lblInteres_data.AutoSize = true;
+            this.lblInteres_data.Location = new System.Drawing.Point(321, 371);
+            this.lblInteres_data.Name = "lblInteres_data";
+            this.lblInteres_data.Size = new System.Drawing.Size(13, 15);
+            this.lblInteres_data.TabIndex = 32;
+            this.lblInteres_data.Text = "0";
+            // 
+            // lblPeso2
+            // 
+            this.lblPeso2.AutoSize = true;
+            this.lblPeso2.Location = new System.Drawing.Point(302, 371);
+            this.lblPeso2.Name = "lblPeso2";
+            this.lblPeso2.Size = new System.Drawing.Size(13, 15);
+            this.lblPeso2.TabIndex = 31;
+            this.lblPeso2.Text = "$";
+            // 
+            // lblInteres
+            // 
+            this.lblInteres.AutoSize = true;
+            this.lblInteres.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblInteres.Location = new System.Drawing.Point(12, 369);
+            this.lblInteres.Name = "lblInteres";
+            this.lblInteres.Size = new System.Drawing.Size(131, 19);
+            this.lblInteres.TabIndex = 30;
+            this.lblInteres.Text = "Recargo por targeta";
+            // 
+            // lblSubtotal_data
+            // 
+            this.lblSubtotal_data.AutoSize = true;
+            this.lblSubtotal_data.Location = new System.Drawing.Point(321, 354);
+            this.lblSubtotal_data.Name = "lblSubtotal_data";
+            this.lblSubtotal_data.Size = new System.Drawing.Size(13, 15);
+            this.lblSubtotal_data.TabIndex = 35;
+            this.lblSubtotal_data.Text = "0";
+            // 
+            // lblPeso3
+            // 
+            this.lblPeso3.AutoSize = true;
+            this.lblPeso3.Location = new System.Drawing.Point(302, 354);
+            this.lblPeso3.Name = "lblPeso3";
+            this.lblPeso3.Size = new System.Drawing.Size(13, 15);
+            this.lblPeso3.TabIndex = 34;
+            this.lblPeso3.Text = "$";
+            // 
+            // lblSubtotal
+            // 
+            this.lblSubtotal.AutoSize = true;
+            this.lblSubtotal.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblSubtotal.Location = new System.Drawing.Point(12, 352);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(60, 19);
+            this.lblSubtotal.TabIndex = 33;
+            this.lblSubtotal.Text = "Subtotal";
+            // 
             // FRMFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(399, 519);
+            this.ClientSize = new System.Drawing.Size(399, 549);
+            this.Controls.Add(this.lblSubtotal_data);
+            this.Controls.Add(this.lblPeso3);
+            this.Controls.Add(this.lblSubtotal);
+            this.Controls.Add(this.lblInteres_data);
+            this.Controls.Add(this.lblPeso2);
+            this.Controls.Add(this.lblInteres);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.lblNroFatura_data);
@@ -416,5 +484,11 @@
         private Label lblNroFatura_data;
         private Button btnImprimir;
         private Button btnCerrar;
+        private Label lblInteres_data;
+        private Label lblPeso2;
+        private Label lblInteres;
+        private Label lblSubtotal_data;
+        private Label lblPeso3;
+        private Label lblSubtotal;
     }
 }

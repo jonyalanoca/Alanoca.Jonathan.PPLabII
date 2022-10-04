@@ -18,6 +18,7 @@ namespace Entidades
         private static int horasPorDia;
         private static double dineroCaja;
         private static int numeroClientes;
+        private static List<Venta> historialVentas;
         static Negocio()
         {
             Negocio.idProducto = 100;
@@ -27,6 +28,7 @@ namespace Entidades
             Negocio.numeroClientes = 900312;
             Negocio.usuariosList = new List<Usuario>();
             Negocio.productosList = new List<Producto>();
+            Negocio.historialVentas = new List<Venta>();
 
 
             List<EDias> dias = new List<EDias>() { EDias.Lunes, EDias.Martes,EDias.Miercoles,EDias.Jueves,EDias.Viernes};
@@ -80,6 +82,14 @@ namespace Entidades
         {
             get { return Negocio.numeroClientes; }
             set { Negocio.numeroClientes = value; }
+        }
+        public static List<Venta> HistorialVentas
+        {
+            get { return Negocio.historialVentas; }
+        }
+        public static void AgregarVentaAHistorial(Venta venta)
+        {
+            Negocio.historialVentas.Add(venta);
         }
         public static string ObtenerNombreCompleto(string email)
         {

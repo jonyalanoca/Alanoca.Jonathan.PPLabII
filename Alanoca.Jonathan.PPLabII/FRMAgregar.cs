@@ -16,15 +16,11 @@ namespace Labo_tp1
         public FRMAgregar()
         {
             InitializeComponent();
-            int numero;
         }
 
         private void FRMAgregar_Load(object sender, EventArgs e)
         {
             cmbSeleccionProd.SelectedIndex = 0;
-            //grpDatosNote.Location= new System.Drawing.Point(586, 107);
-            //grpCelular.Location = new System.Drawing.Point(586, 107);
-            Size = new Size(560, 413);
             lblId_data.Text = Negocio.IdProducto.ToString();
             foreach (var i in Enum.GetValues(typeof(ECategoria)))
             {
