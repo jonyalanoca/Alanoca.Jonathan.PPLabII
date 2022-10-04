@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMFactura));
             this.lblNombreEmpresa = new System.Windows.Forms.Label();
             this.lblAsteriscos1 = new System.Windows.Forms.Label();
             this.lblAsteriscos2 = new System.Windows.Forms.Label();
@@ -444,6 +445,7 @@
             this.Controls.Add(this.lblAsteriscos1);
             this.Controls.Add(this.lblNombreEmpresa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FRMFactura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRMFactura";

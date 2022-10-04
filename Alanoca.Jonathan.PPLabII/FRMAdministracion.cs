@@ -244,8 +244,10 @@ namespace Labo_tp1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FRMAgregar frmAgregar = new FRMAgregar();
             frmAgregar.ShowDialog();
+            this.Show();
             dgvListaProductos.Rows.Clear();
             Filtrar();
             CargarDatagrid();
