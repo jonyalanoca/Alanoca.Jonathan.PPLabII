@@ -64,6 +64,13 @@ namespace Labo_tp1
                         MessageBox.Show("Bienvenido " +this.usuarioLogeado.CrearNombreCompleto()+ "\nPorfavor seleccione a que sector desea ir.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BloquearYDesbloquear();
                         break;
+                    case EPuesto.Contador:
+                        this.usuarioLogeado = Validador.Validar(Negocio.UsuariosList, txtEmail.Text);
+                        MessageBox.Show("Bienvenido " + this.usuarioLogeado.CrearNombreCompleto() + "\nQue tenga un buen día.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
+
+                            this.Show();
+                        break;
                 }
             }
         }

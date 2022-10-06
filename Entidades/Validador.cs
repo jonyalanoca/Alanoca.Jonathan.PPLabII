@@ -22,9 +22,13 @@ namespace Entidades
                     {
                         aux = EPuesto.Vendedor;
                     }
-                    else
+                    else if (user.GetType() == typeof(Dueño))
                     {
                         aux= EPuesto.Dueño;
+                    }
+                    else
+                    {
+                        aux = EPuesto.Contador;
                     }
                     break;
                 }

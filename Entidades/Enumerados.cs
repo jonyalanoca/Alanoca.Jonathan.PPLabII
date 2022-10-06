@@ -12,7 +12,8 @@ public enum EPuesto
 {
     Ninguno,
     Dueño,
-    Vendedor
+    Vendedor,
+    Contador
 }
 public enum ECategoria
 {

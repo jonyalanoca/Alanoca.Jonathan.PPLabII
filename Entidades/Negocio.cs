@@ -39,6 +39,8 @@ namespace Entidades
             Negocio.usuariosList.Add(new Vendedor("Carolina", "Osorio", 403944933, "caroosorio@gmail.com", "pass123", 25, dias));
             //Agregando Dueños
             Negocio.usuariosList.Add(new Dueño("Camila", "Simpson", 401231232, "camisimpson@gmail.com", "123pass"));
+            //Agrego Contadores
+            Negocio.usuariosList.Add(new Contador("Andres", "Iniesta", 301231232, "andreiniesta@gmail.com", "123password"));
             //Agregando productos a la tienda
             Negocio.productosList.Add(new Producto(Negocio.idProducto++,"Cafetera", "TopHouse", 50000, "Argentina", ECategoria.Electrodomesticos,50));
             Negocio.productosList.Add(new Producto(Negocio.idProducto++, "Tijera", "Pizzini", 5000, "Alemania",ECategoria.Herramientas,200));
@@ -51,6 +53,7 @@ namespace Entidades
             Negocio.productosList.Add(new Celular(Negocio.idProducto++, "Samsung", 47000, "China", ECategoria.Celulares, 3, "GalaxyA3", "Andriod12", 48, (float)6.5, 128));
             Negocio.productosList.Add(new Celular(Negocio.idProducto++, "Motorola", 60000, "China", ECategoria.Celulares, 9, "MotoG5", "Andriod12", 50, (float)6.6, 128));
             Negocio.productosList.Add(new Celular(Negocio.idProducto++, "Morotola", 150000, "China", ECategoria.Celulares, 2, "Edge20Pro", "Andriod13", 108, (float)6.7, 256));
+
         }
         public static int IdProducto
         {
