@@ -20,9 +20,5 @@ namespace Entidades
         {
             get {return this.sueldo; }
         }
-        public float Mostrar()
-        {
-            return 0;
-        }
     }
 }

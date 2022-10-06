@@ -117,6 +117,12 @@ namespace Labo_tp1
                 }
             }
         }
+        /// <summary>
+        /// verifica si el el stock es mayor o igual a la catidad requerida
+        /// </summary>
+        /// <param name="stock"></param>
+        /// <param name="cantidad"></param>
+        /// <returns> true si hay stock. false si no hay stock</returns>
         private bool ValidarStock(int stock, int cantidad)
         {
             if (cantidad <= stock)
@@ -125,6 +131,10 @@ namespace Labo_tp1
             }
             return false;
         }
+        /// <summary>
+        /// borra y vuelve a escribir la tabla, solo los productos con la categoria indicada por parametros
+        /// </summary>
+        /// <param name="categoria"></param>
         private void Filtrar(ECategoria categoria)
         {
             
@@ -137,6 +147,9 @@ namespace Labo_tp1
                 }
             }
         }
+        /// <summary>
+        /// completa la tabla con los productos que tiene el negocio
+        /// </summary>
         private void SinFiltro()
         {
             foreach (var i in Negocio.ProductosList)
@@ -144,7 +157,9 @@ namespace Labo_tp1
                 dgvListaProductos.Rows.Add(i.Id, i.Marca, i.Origen, i.Categoria.ToString(), i.Precio, i.Stock);
             }
         }
-
+        /// <summary>
+        /// reseta los datos del carrito de compra, para realizar una nueva.
+        /// </summary>
         private void ResetearDatos()
         {
             this.listaCarrito.Clear();
@@ -153,6 +168,9 @@ namespace Labo_tp1
             ltbCarrito.Items.Clear();
             this.numeroLista = 1;
         }
+        /// <summary>
+        /// actualiza los datos del stock de un producto del negocio 
+        /// </summary>
         private void ActualizarProductos()
         {
             foreach(var i in this.listaCarrito)
@@ -160,6 +178,11 @@ namespace Labo_tp1
                 i.Key.Stock = i.Key - i.Value;
             }
         }
+        /// <summary>
+        /// valida si ya ingresamos el producto a al carrito posteriormente
+        /// </summary>
+        /// <param name="prod"></param>
+        /// <returns>true  si ya existe fue agregado, false si aun no ha sido agregado</returns>
         private bool ExisteProducto(Producto prod)
         {
             foreach(var i in listaCarrito)
@@ -171,6 +194,9 @@ namespace Labo_tp1
             }
             return false;
         }
+        /// <summary>
+        /// guarda en el historial del negocio las ventas realizadas (lo que estaba en la lista carritos)
+        /// </summary>
         private void GuardarHistorial()
         {
             Venta venta=null;

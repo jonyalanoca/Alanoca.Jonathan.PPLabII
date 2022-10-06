@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// Clase que guarda los detalles de una venta 
+    /// </summary>
     public class Venta
     {
         private DateTime fecha;

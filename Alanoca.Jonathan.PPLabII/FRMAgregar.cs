@@ -134,6 +134,13 @@ namespace Labo_tp1
         {
             VerificarVacio(txtMarca, chkMarca);
         }
+        /// <summary>
+        /// verifica que el textbox tiene algun caracter. cambia el checkbox segun corresponda:
+        /// checked=true tiene algun caracter
+        /// checked=false el textbox esta vacio
+        /// </summary>
+        /// <param name="herramienta"></param>
+        /// <param name="cheched"></param>
         private void VerificarVacio(TextBox herramienta,CheckBox cheched)
         {
             if (herramienta.Text != "")
@@ -145,6 +152,11 @@ namespace Labo_tp1
                 cheched.Checked = false;
             }
         }
+        /// <summary>
+        /// verifica que el combobox tiene seleccionado algun item
+        /// </summary>
+        /// <param name="combo"></param>
+        /// <param name="check"></param>
         private void VerificarCombo(ComboBox combo, CheckBox check)
         {
             if (combo.SelectedIndex == -1)
@@ -156,6 +168,13 @@ namespace Labo_tp1
                 check.Checked = true;
             }
         }
+        /// <summary>
+        /// valida que un trackbar tiene valor 0. cambia el checkbox segun corresponda.
+        /// checked=true si tiene algun valor distinto de cero
+        /// checked=false si tiene como valor cero
+        /// </summary>
+        /// <param name="track"></param>
+        /// <param name="check"></param>
         private void ValidarTrackBar(TrackBar track, CheckBox check)
         {
             if (track.Value != 0)
@@ -167,6 +186,9 @@ namespace Labo_tp1
                 check.Checked = false;
             }
         }
+        /// <summary>
+        /// Resetea los valores y campos a cero o vacio segun corresponda
+        /// </summary>
         private void BorrarCampos()
         {
             lblId_data.Text = Negocio.IdProducto.ToString();
@@ -193,6 +215,14 @@ namespace Labo_tp1
             cmbCelPulgadas.SelectedIndex = -1;
             cmbCelMemoria.SelectedIndex = -1;
         }
+        /// <summary>
+        /// Recorre el emun catagorias y lo compara con un string
+        /// </summary>
+        /// <param name="catString"></param>
+        /// <returns>
+        /// Retorna la categoria conincidente
+        /// retornará Otros en caso de no encontrar ninguno
+        /// </returns>
         private ECategoria BuscarCatogoriaByString(string catString)
         {
             ECategoria auxCategoria=ECategoria.Otros;
@@ -200,6 +230,7 @@ namespace Labo_tp1
                 if (i.ToString() == catString)
                 {
                     auxCategoria = (ECategoria)i;
+                    break;
                 }
             }
             return auxCategoria;
@@ -216,6 +247,10 @@ namespace Labo_tp1
             }
             return auxTipo;
         }
+        /// <summary>
+        /// Confirma o Restringe el agregado de un producto a la lista del productos del negocio
+        /// </summary>
+        /// <param name="prod"></param>
         private void AgrearProducto(Producto prod)
         {
             if(MessageBox.Show("¿Seguro que desea agregar el siguiente producto?\n" + prod.MostrarInfo(), "Añadir producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)

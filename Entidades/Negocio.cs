@@ -88,11 +88,18 @@ namespace Entidades
         {
             get { return Negocio.historialVentas; }
         }
-
+        /// <summary>
+        /// agrega un detalle de venta en la lista historial del negocio
+        /// </summary>
+        /// <param name="venta"></param>
         public static void AgregarVentaAHistorial(Venta venta)
         {
             Negocio.historialVentas.Add(venta);
         }
+        /// <summary>
+        /// agrega un producto a la lista de productos del negocio
+        /// </summary>
+        /// <param name="prod"></param>
         public static void AgregarProductoAListaProd(Producto prod)
         {
             Negocio.productosList.Add(prod);

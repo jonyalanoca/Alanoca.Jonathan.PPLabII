@@ -61,7 +61,7 @@ namespace Labo_tp1
                         break;
                     case EPuesto.Dueño:
                         this.usuarioLogeado = Validador.Validar(Negocio.UsuariosList, txtEmail.Text);
-                        MessageBox.Show("Bienvenido " + Validador.Validar(Negocio.UsuariosList, txtEmail.Text).CrearNombreCompleto() + "\nPorfavor seleccione a que sector desea ir.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Bienvenido " +this.usuarioLogeado.CrearNombreCompleto()+ "\nPorfavor seleccione a que sector desea ir.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BloquearYDesbloquear();
                         break;
                 }
@@ -98,6 +98,9 @@ namespace Labo_tp1
             this.Show();
             BloquearYDesbloquear();
         }
+        /// <summary>
+        /// Si ya esta bloqueado lo desbloquea y viceversa
+        /// </summary>
         private void BloquearYDesbloquear()
         {
             btnIngresar.Visible = !btnIngresar.Visible;

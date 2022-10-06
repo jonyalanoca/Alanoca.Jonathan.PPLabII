@@ -20,7 +20,10 @@ namespace Entidades
             this.memoria = memoria;
             this.ram = ram;
         }
-
+        /// <summary>
+        /// Crea un detalle con todos los datos importante de una notebook.
+        /// </summary>
+        /// <returns> devuelve un string </returns>
         public override string MostrarInfo()
         {
             StringBuilder sb = new StringBuilder();

@@ -61,6 +61,10 @@ namespace Entidades
             set { this.stock = value; }
         }
         #endregion
+        /// <summary>
+        /// Crea un string detallando los valores de la clase, ordenado.
+        /// </summary>
+        /// <returns> devuelve un string con el detalle</returns>
         public virtual string MostrarInfo()
         {
             StringBuilder sb = new StringBuilder();
@@ -82,6 +86,12 @@ namespace Entidades
         {
             return !(p == id);
         }
+        /// <summary>
+        /// disminuye el stock
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="num"></param>
+        /// <returns>retorna el restultado de la resta</returns>
         public static int operator -(Producto p, int num)
         {
             return p.stock - num;

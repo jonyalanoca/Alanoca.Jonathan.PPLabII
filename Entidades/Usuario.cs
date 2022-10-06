@@ -45,6 +45,12 @@ namespace Entidades
             this.password = password;
         }
         #endregion
+        /// <summary>
+        /// sobrecarga de operadores compara dos emails
+        /// </summary>
+        /// <param name="v"></param>
+        /// <param name="email"></param>
+        /// <returns> true si coinciden, false si no</returns>
         public static bool operator ==(Usuario v, string email)
         {
             return v.Email == email;
@@ -53,6 +59,10 @@ namespace Entidades
         {
             return !(v == email);
         }
+        /// <summary>
+        /// Crea una presentacion de el usuario con nombre y apellido
+        /// </summary>
+        /// <returns> devuelve un string con el nombre completo</returns>
         public string CrearNombreCompleto()
         {
             StringBuilder sb = new StringBuilder();

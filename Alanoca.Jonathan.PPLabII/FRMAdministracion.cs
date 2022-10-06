@@ -27,7 +27,9 @@ namespace Labo_tp1
             Filtrar();
             CargarDatagrid();
         }
-
+        /// <summary>
+        /// hace una copia de la lista de productos del negocio en un lista especial para esta seccion
+        /// </summary>
         private void Filtrar()
         {
             this.listaFiltrada.Clear();
@@ -36,6 +38,10 @@ namespace Labo_tp1
                 this.listaFiltrada.Add(i);
             }
         }
+        /// <summary>
+        /// filtra  segun la categoria inidicada por parametro de la lista de productos del negocio y los carga en la lista especial para esta sección
+        /// </summary>
+        /// <param name="categoria"></param>
         private void Filtrar(ECategoria categoria)
         {
             this.listaFiltrada.Clear();
@@ -48,7 +54,9 @@ namespace Labo_tp1
                 }
             }
         }
-
+        /// <summary>
+        /// cargalos datos del data gridview con los registros de la lista especial para esta seccion
+        /// </summary>
         private void CargarDatagrid()
         {
             foreach (var i in this.listaFiltrada)
@@ -57,6 +65,13 @@ namespace Labo_tp1
 
             }
         }
+        /// <summary>
+        /// Realiza varias acciones Repetitivas en el codigo(DRY)
+        /// Borrar:borrar o resetea los datos 
+        /// filtrar: filtra segun la categoria pasado por parametro.
+        /// Cargar: carga el datagridview con los nuevo datos
+        /// </summary>
+        /// <param name="categoria"></param>
         private void BorrarFiltrarYCargar(ECategoria categoria)
         {
             txtDesde.Text = "";
@@ -136,7 +151,15 @@ namespace Labo_tp1
             listaFiltrada.Sort(FMenorPrecio);
             CargarDatagrid();
         }
-
+        /// <summary>
+        /// funcion especial para usarlo en el sort.sorter una lista
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns>
+        /// -1 si el precio1 es mayor al precio2
+        /// 1: si el precio1 es menor o igual al precio2
+        /// </returns>
         private int FMayorPrecio(Producto x, Producto y)
         {
             if (x.Precio > y.Precio)
@@ -145,7 +168,16 @@ namespace Labo_tp1
             }
             return 1;
         }
-
+        /// <summary>
+        /// funcion especial para usarlo en el sort.sorter una lista
+        /// Compara dos precio
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns>
+        /// 1:si el precio 1 es mayor que el precio2
+        /// -1:si el precio1 es menor o igual al precio2
+        /// /// </returns>
         private  static int FMenorPrecio(Producto x, Producto y)
         {
             if (x.Precio > y.Precio)

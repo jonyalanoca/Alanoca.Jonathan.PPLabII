@@ -17,6 +17,11 @@ namespace Entidades
             TransformadorTiempo.minutos = 0;
             TransformadorTiempo.segundos = 0;
         }
+        /// <summary>
+        /// recibe los segundos y los transfomar en minutos y horas segun corresponda 
+        /// </summary>
+        /// <param name="segundos"></param>
+        /// <returns> retorna un string del formato de tiempo inicado</returns>
         public static string Transformar(int segundos)
         {
             StringBuilder sb = new StringBuilder();

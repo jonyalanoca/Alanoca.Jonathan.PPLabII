@@ -21,6 +21,10 @@ namespace Entidades
             this.pulgadas = pulgadas;
             this.memoria = memoria;
         }
+        /// <summary>
+        /// crea un informe con los detalles del celular 
+        /// </summary>
+        /// <returns> retorna un string con los datos ordenados</returns>
         public override string MostrarInfo()
         {
             StringBuilder sb = new StringBuilder();
