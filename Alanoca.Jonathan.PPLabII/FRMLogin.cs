@@ -68,8 +68,9 @@ namespace Labo_tp1
                         this.usuarioLogeado = Validador.Validar(Negocio.UsuariosList, txtEmail.Text);
                         MessageBox.Show("Bienvenido " + this.usuarioLogeado.CrearNombreCompleto() + "\nQue tenga un buen día.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-
-                            this.Show();
+                        FRMEstadisticas formAdmin = new FRMEstadisticas(this.usuarioLogeado);
+                        formAdmin.ShowDialog();
+                        this.Show();
                         break;
                 }
             }

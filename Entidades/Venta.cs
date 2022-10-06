@@ -79,5 +79,9 @@ namespace Entidades
         {
             get { return this.total; }
         }
+        public Producto ProductoC
+        {
+            get { return this.producto; }
+        }
     }
 }

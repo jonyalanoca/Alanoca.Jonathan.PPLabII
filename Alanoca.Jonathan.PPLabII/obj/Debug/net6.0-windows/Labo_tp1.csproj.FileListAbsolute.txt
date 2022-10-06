@@ -60,3 +60,4 @@ C:\Users\jonya\Desktop\Alanoca.Jonathan.PPLabII\Alanoca.Jonathan.PPLabII\obj\Deb
 C:\Users\jonya\Desktop\Alanoca.Jonathan.PPLabII\Alanoca.Jonathan.PPLabII\obj\Debug\net6.0-windows\Labo_tp1.FRMEditar.resources
 C:\Users\jonya\Desktop\Alanoca.Jonathan.PPLabII\Alanoca.Jonathan.PPLabII\obj\Debug\net6.0-windows\Labo_tp1.FRMAgregar.resources
 C:\Users\jonya\Desktop\Alanoca.Jonathan.PPLabII\Alanoca.Jonathan.PPLabII\obj\Debug\net6.0-windows\Labo_tp1.FRMHistorial.resources
+C:\Users\jonya\Desktop\Alanoca.Jonathan.PPLabII\Alanoca.Jonathan.PPLabII\obj\Debug\net6.0-windows\Labo_tp1.FRMEstadisticas.resources

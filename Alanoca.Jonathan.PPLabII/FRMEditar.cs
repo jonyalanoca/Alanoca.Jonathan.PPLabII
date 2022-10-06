@@ -62,5 +62,10 @@ namespace Labo_tp1
             this.prod.Stock = tkbStock.Value;
             this.Close();
         }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

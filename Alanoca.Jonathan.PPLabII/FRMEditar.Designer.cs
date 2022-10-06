@@ -118,6 +118,7 @@
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(150, 23);
             this.cmbCategoria.TabIndex = 32;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
             // 
             // btnFiltrarPrecio
             // 
