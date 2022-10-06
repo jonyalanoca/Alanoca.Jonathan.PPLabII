@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
+using System.Data.Common;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -87,22 +88,15 @@ namespace Entidades
         {
             get { return Negocio.historialVentas; }
         }
+
         public static void AgregarVentaAHistorial(Venta venta)
         {
             Negocio.historialVentas.Add(venta);
         }
-        public static string ObtenerNombreCompleto(string email)
+        public static void AgregarProductoAListaProd(Producto prod)
         {
-            StringBuilder sb = new StringBuilder();
-            foreach(var i in Negocio.usuariosList)
-            {
-                if (i == email)
-                {
-                    sb.Append($"{i.Nombre} {i.Apellido}");
-                    break;
-                }
-            }
-            return sb.ToString();
+            Negocio.productosList.Add(prod);
         }
+
     }
 }

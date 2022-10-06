@@ -63,7 +63,7 @@ namespace Entidades
             {
                 if (this.targeta == true)
                 {
-                    return "Con targeta";
+                    return "Con tarjeta";
                 }
                 return "Efectivo";
             }

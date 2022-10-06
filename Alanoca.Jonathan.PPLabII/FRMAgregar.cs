@@ -106,7 +106,7 @@ namespace Labo_tp1
             {
                 MessageBox.Show("Porfavor revise que tiene los campos bien completados\nConsejo: revise los checks", "Faltan Datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            BorrarCampos();
+            
 
             
         }
@@ -220,9 +220,11 @@ namespace Labo_tp1
         {
             if(MessageBox.Show("¿Seguro que desea agregar el siguiente producto?\n" + prod.MostrarInfo(), "Añadir producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
             {
-                Negocio.ProductosList.Add(prod);
+                Negocio.AgregarProductoAListaProd(prod);
                 Negocio.IdProducto++;
+
                 MessageBox.Show("¡Se agregó el producto!", "Producto añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                BorrarCampos();
             }
             
         }

@@ -82,5 +82,9 @@ namespace Entidades
         {
             return !(p == id);
         }
+        public static int operator -(Producto p, int num)
+        {
+            return p.stock - num;
+        }
     }
 }

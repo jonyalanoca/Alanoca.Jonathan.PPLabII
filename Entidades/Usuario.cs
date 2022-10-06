@@ -53,6 +53,12 @@ namespace Entidades
         {
             return !(v == email);
         }
+        public string CrearNombreCompleto()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{this.nombre} {this.apellido}");
+            return sb.ToString();
+        }
 
 
     }

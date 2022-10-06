@@ -24,7 +24,7 @@ namespace Labo_tp1
         private double dineroClinte;
         private bool clienteActivo;
         private Color color;
-        public FRMVentas(string  email,Color color)
+        public FRMVentas(Usuario user,Color color)
         {
             InitializeComponent();
             this.listaCarrito = new Dictionary<Producto, int> ();
@@ -33,13 +33,7 @@ namespace Labo_tp1
             this.color = color;
             this.clienteActivo = false;
             this.nroRandom = new Random();
-            foreach(var i in Negocio.UsuariosList)
-            {
-                if (i == email)
-                {
-                    usuario = i;
-                }
-            }
+            this.usuario = user;
         }
         private void FRMVentas_Load(object sender, EventArgs e)
         {
@@ -163,7 +157,7 @@ namespace Labo_tp1
         {
             foreach(var i in this.listaCarrito)
             {
-                i.Key.Stock -= i.Value;
+                i.Key.Stock = i.Key - i.Value;
             }
         }
         private bool ExisteProducto(Producto prod)

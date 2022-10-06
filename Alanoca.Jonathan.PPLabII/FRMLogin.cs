@@ -5,9 +5,11 @@ namespace Labo_tp1
 {
     public partial class FrmLogin : Form
     {
+        private Usuario usuarioLogeado;
         public FrmLogin()
         {
             InitializeComponent();
+            this.usuarioLogeado = null;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -50,14 +52,16 @@ namespace Labo_tp1
                         MessageBox.Show("Los datos ingresados son incorrectos", "Acceso denegado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         break;
                     case EPuesto.Vendedor:
-                        MessageBox.Show("Bienvenido " + Negocio.ObtenerNombreCompleto(txtEmail.Text) + "\nQue tenga un buen día.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.usuarioLogeado = Validador.Validar(Negocio.UsuariosList, txtEmail.Text);
+                        MessageBox.Show("Bienvenido " + this.usuarioLogeado.CrearNombreCompleto() + "\nQue tenga un buen día.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        FRMVentas formVentas = new FRMVentas(txtEmail.Text,Color.Crimson);
+                        FRMVentas formVentas = new FRMVentas(this.usuarioLogeado, Color.Crimson);
                         formVentas.ShowDialog();
                         this.Show();
                         break;
                     case EPuesto.Dueño:
-                        MessageBox.Show("Bienvenido " + Negocio.ObtenerNombreCompleto(txtEmail.Text) + "\nPorfavor seleccione a que sector desea ir.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.usuarioLogeado = Validador.Validar(Negocio.UsuariosList, txtEmail.Text);
+                        MessageBox.Show("Bienvenido " + Validador.Validar(Negocio.UsuariosList, txtEmail.Text).CrearNombreCompleto() + "\nPorfavor seleccione a que sector desea ir.", "Bievenida", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BloquearYDesbloquear();
                         break;
                 }
@@ -79,7 +83,7 @@ namespace Labo_tp1
         {
             Console.Beep(100, 300);
             this.Hide();
-            FRMVentas formVentas = new FRMVentas(txtEmail.Text,Color.FromArgb(128, 64, 64));
+            FRMVentas formVentas = new FRMVentas(this.usuarioLogeado, Color.FromArgb(128, 64, 64));
             formVentas.ShowDialog();
             this.Show();
             BloquearYDesbloquear();

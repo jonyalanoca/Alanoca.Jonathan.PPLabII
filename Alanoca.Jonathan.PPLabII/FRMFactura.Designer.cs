@@ -371,9 +371,9 @@
             this.lblInteres.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblInteres.Location = new System.Drawing.Point(12, 369);
             this.lblInteres.Name = "lblInteres";
-            this.lblInteres.Size = new System.Drawing.Size(131, 19);
+            this.lblInteres.Size = new System.Drawing.Size(126, 19);
             this.lblInteres.TabIndex = 30;
-            this.lblInteres.Text = "Recargo por targeta";
+            this.lblInteres.Text = "Recargo por tarjeta";
             // 
             // lblSubtotal_data
             // 
